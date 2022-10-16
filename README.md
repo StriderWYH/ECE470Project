@@ -9,5 +9,6 @@ The stage we are on now:
 	1. Succeed moving the arm with angles of the six joints given 
 	2. Suceed having access to the gripper. 
 
-For demonstartion, we also provide a video on Youtube
+For demonstartion, we also provide a video on Youtube https://youtu.be/btzSRcvAxK4
+
 
