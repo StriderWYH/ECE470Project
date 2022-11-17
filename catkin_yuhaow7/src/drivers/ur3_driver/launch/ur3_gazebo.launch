@@ -8,7 +8,7 @@
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" default="worlds/empty.world"/>
+    <arg name="world_name" value="$(find ur3_driver)/worlds/test.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gui" value="$(arg gui)"/>
   </include>
@@ -38,5 +38,10 @@
 
 	<node name="ur3_gazebo_driver_1" pkg="ur3_driver" type="ur3_gazebo_driver.py" output="screen">
 	</node>
+   <!--<include file="$(find smartcar_description)/launch/xacro/smartcar_gazebo.launch"/>
+   -->
+   
+  <include file="$(find diff_wheeled_robot_gazebo)/launch/diff_wheeled_gazebo.launch"/>
+ 
 
 </launch>

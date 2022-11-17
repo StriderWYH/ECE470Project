@@ -154,6 +154,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ur3/catkin_yuhaow7/build/drivers/gazebo_ros_pkgs/gazebo_ros_control/cmake_install.cmake")
   include("/home/ur3/catkin_yuhaow7/build/drivers/universal_robot/ur_kinematics/cmake_install.cmake")
   include("/home/ur3/catkin_yuhaow7/build/drivers/camera_calibration/usb_cam/cmake_install.cmake")
+  include("/home/ur3/catkin_yuhaow7/build/drivers/diff_wheeled_robot_control/cmake_install.cmake")
+  include("/home/ur3/catkin_yuhaow7/build/drivers/diff_wheeled_robot_gazebo/cmake_install.cmake")
   include("/home/ur3/catkin_yuhaow7/build/drivers/universal_robot/ur3_e_moveit_config/cmake_install.cmake")
   include("/home/ur3/catkin_yuhaow7/build/drivers/universal_robot/ur3_moveit_config/cmake_install.cmake")
 
