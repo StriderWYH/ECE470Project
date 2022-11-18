@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import numpy as np
 from scipy.linalg import expm, logm
-from lab2_header import *
+from project_header import *
 from cmath import asin, sin
 from math import atan2
 """

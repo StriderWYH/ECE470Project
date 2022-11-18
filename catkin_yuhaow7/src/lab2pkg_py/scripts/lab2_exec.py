@@ -15,8 +15,10 @@ import rospkg
 import numpy as np
 import yaml
 import sys
-from lab2_header import *
+from project_header import *
 from project_func import *
+from blob_search import *
+
 
 # 20Hz
 SPIN_RATE = 20
@@ -39,7 +41,8 @@ current_io_0 = False
 current_position_set = False
 
 Q = None
- 
+
+image_shape_define = False
 # Position for UR3 not blocking the camera
 go_away = [270*PI/180.0, -90*PI/180.0, 90*PI/180.0, -90*PI/180.0, -90*PI/180.0, 135*PI/180.0]
 
@@ -198,11 +201,11 @@ def move_block(pub_cmd, loop_rate, start_xw_yw_zw, target_xw_yw_zw, vel, accel):
     time.sleep(0.5)
     gripper(pub_cmd,loop_rate,suction_on)
     time.sleep(1.0)
-    # if not digital_in_0:
-    #     error = 1
-    #     gripper(pub_cmd,loop_rate,suction_off)
-    #     rospy.loginfo("Fail to grip the block")
-    #     return error
+    if not digital_in_0:
+        error = 1
+        gripper(pub_cmd,loop_rate,suction_off)
+        rospy.loginfo("Fail to grip the block")
+        return error
     #add in lab5
     move_arm(pub_cmd, loop_rate, mid_angle, 4.0, 4.0)
     rospy.loginfo("Moving to the current destination...")
@@ -216,6 +219,47 @@ def move_block(pub_cmd, loop_rate, start_xw_yw_zw, target_xw_yw_zw, vel, accel):
     # ========================= Student's code ends here ===========================
 
     return error
+
+class ImageConverter:
+
+    def __init__(self, SPIN_RATE):
+
+        self.bridge = CvBridge()
+        self.image_pub = rospy.Publisher("/image_converter/output_video", Image, queue_size=10)
+        self.image_sub = rospy.Subscriber("/cv_camera_node/image_raw", Image, self.image_callback)
+        self.loop_rate = rospy.Rate(SPIN_RATE)
+
+        # Check if ROS is ready for operation
+        while(rospy.is_shutdown()):
+            print("ROS is shutdown!")
+
+
+    def image_callback(self, data):
+
+        global xw_yw_G # store found green blocks in this list
+        global xw_yw_Y # store found yellow blocks in this list
+
+        try:
+          # Convert ROS image to OpenCV image
+            raw_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
+        except CvBridgeError as e:
+            print(e)
+
+        cv_image = cv2.flip(raw_image, -1)
+        cv2.line(cv_image, (0,50), (640,50), (0,0,0), 5)
+
+        # You will need to call blob_search() function to find centers of green blocks
+        # and yellow blocks, and store the centers in xw_yw_G & xw_yw_Y respectively.
+
+        # If no blocks are found for a particular color, you can return an empty list,
+        # to xw_yw_G or xw_yw_Y.
+
+        # Remember, xw_yw_G & xw_yw_Y are in global coordinates, which means you will
+        # do coordinate transformation in the blob_search() function, namely, from
+        # the image frame to the global world frame.
+
+        xw_yw_G = blob_search(cv_image, "green")
+        xw_yw_Y = blob_search(cv_image, "orange")
 
 
 ############### Your Code End Here ###############
@@ -290,11 +334,12 @@ def main():
     # Initialize subscriber to ur3/position and callback fuction
     # each time data is published
     sub_position = rospy.Subscriber('ur3/position', position, position_callback)
+    
 
     ############## Your Code Start Here ##############
     # TODO: define a ROS subscriber for ur3/gripper_input message and corresponding callback function
 
-
+    sub_input = rospy.Subscriber('ur3/gripper_input', gripper_input, input_callback)
 
 
 
@@ -340,38 +385,50 @@ def main():
 
     loop_rate = rospy.Rate(SPIN_RATE)
 
+    ################### Open_cv ##########################
+
+    vel = 4.0
+    accel = 4.0
+    move_arm(pub_command, loop_rate, go_away, vel, accel)
+
+    ic = ImageConverter(SPIN_RATE)
+    time.sleep(5)
+
+    # xw_yw_G_cur = xw_yw_G
+    # xw_yw_Y_cur = xw_yw_Y
+
     ############## Your Code Start Here ##############
     # TODO: modify the code so that UR3 can move tower accordingly from user input
 
-    while(loop_count > 0):
+    # while(loop_count > 0):
 
-        move_arm(pub_command, loop_rate, home, 4.0, 4.0)
+    #     move_arm(pub_command, loop_rate, home, 4.0, 4.0)
 
-        rospy.loginfo("Sending goal 1 ...")
-        move_arm(pub_command, loop_rate, Q[0][0][1], 4.0, 4.0)
+    #     rospy.loginfo("Sending goal 1 ...")
+    #     move_arm(pub_command, loop_rate, Q[0][0][1], 4.0, 4.0)
 
-        gripper(pub_command, loop_rate, suction_on)
-        # Delay to make sure suction cup has grasped the block
-        time.sleep(1.0)
+    #     gripper(pub_command, loop_rate, suction_on)
+    #     # Delay to make sure suction cup has grasped the block
+    #     time.sleep(1.0)
 
-        rospy.loginfo("Sending goal 2 ...")
-        move_arm(pub_command, loop_rate, Q[1][1][1], 4.0, 4.0)
+    #     rospy.loginfo("Sending goal 2 ...")
+    #     move_arm(pub_command, loop_rate, Q[1][1][1], 4.0, 4.0)
 
-        rospy.loginfo("Sending goal 3 ...")
-        move_arm(pub_command, loop_rate, Q[2][0][1], 4.0, 4.0)
+    #     rospy.loginfo("Sending goal 3 ...")
+    #     move_arm(pub_command, loop_rate, Q[2][0][1], 4.0, 4.0)
 
-        loop_count = loop_count - 1
+    #     loop_count = loop_count - 1
 
 
-    gripper(pub_command, loop_rate, suction_off)
-    start_angle = lab_invk(0.4,0.25,0.0355,0)
-    mid_angle = lab_invk(0.25,0.1,0.06,0)
-    dest_angle = lab_invk(0.15,0.45,0.15,0)
-    move_arm(pub_command, loop_rate, mid_angle,4.0, 4.0)
-    if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
-        gripper(pub_command,loop_rate,suction_off)
-        rospy.loginfo("error, arm is halt")
-        return 1
+    # gripper(pub_command, loop_rate, suction_off)
+    # start_angle = lab_invk(0.4,0.25,0.0355,0)
+    # mid_angle = lab_invk(0.25,0.1,0.06,0)
+    # dest_angle = lab_invk(0.15,0.45,0.15,0)
+    # move_arm(pub_command, loop_rate, mid_angle,4.0, 4.0)
+    # if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
+    #     gripper(pub_command,loop_rate,suction_off)
+    #     rospy.loginfo("error, arm is halt")
+    #     return 1
 
 
     ############### Your Code End Here ###############

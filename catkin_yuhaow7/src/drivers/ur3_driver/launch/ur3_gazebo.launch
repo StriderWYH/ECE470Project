@@ -51,4 +51,6 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
 	args="-urdf -model diff_wheeled_robot -param robot_description2"/> 
 
+  <include file="$(find ur3_driver)/launch/ece470_vision_driver.launch"/>
+
 </launch>
