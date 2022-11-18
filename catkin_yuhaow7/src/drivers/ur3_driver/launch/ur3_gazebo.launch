@@ -8,10 +8,12 @@
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find ur3_driver)/worlds/test.world"/>
+    <arg name="world_name" value="$(find ur3_driver)/worlds/empty.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gui" value="$(arg gui)"/>
   </include>
+   
+  
 
   <!-- send robot urdf to param server -->
   <include file="$(find ur_description)/launch/ur3_upload.launch">
@@ -40,8 +42,13 @@
 	</node>
    <!--<include file="$(find smartcar_description)/launch/xacro/smartcar_gazebo.launch"/>
    -->
-   
-  <include file="$(find diff_wheeled_robot_gazebo)/launch/diff_wheeled_gazebo.launch"/>
+  <!-- <include file="$(find diff_wheeled_robot_gazebo)/launch/diff_wheeled_gazebo.launch"/> -->
  
+ <param name="robot_description2" command="$(find xacro)/xacro $(find diff_wheeled_robot_gazebo)/urdf/diff_wheeled_robot.xacro" />
+
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model diff_wheeled_robot -param robot_description2"/> 
 
 </launch>

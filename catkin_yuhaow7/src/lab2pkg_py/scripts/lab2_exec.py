@@ -16,6 +16,7 @@ import numpy as np
 import yaml
 import sys
 from lab2_header import *
+from project_func import *
 
 # 20Hz
 SPIN_RATE = 20
@@ -38,6 +39,17 @@ current_io_0 = False
 current_position_set = False
 
 Q = None
+ 
+# Position for UR3 not blocking the camera
+go_away = [270*PI/180.0, -90*PI/180.0, 90*PI/180.0, -90*PI/180.0, -90*PI/180.0, 135*PI/180.0]
+
+# Store world coordinates of green and yellow blocks
+xw_yw_G = []
+xw_yw_Y = []
+
+destination_G = [(0.15,0.35,0.2)] # this G is used for the Green Block detection
+destination_Y = [(0.15,0.25,0.2)] # this Y is used for the orange Block detection
+mid_angle = [0.0,0.0,0.0,0.0,0.0,0.0] # middle point for moving the arm
 
 ############## Your Code Start Here ##############
 
@@ -45,6 +57,15 @@ Q = None
 TODO: define a ROS topic callback funtion for getting the state of suction cup
 Whenever ur3/gripper_input publishes info this callback function is called.
 """
+
+"""
+Whenever ur3/gripper_input publishes info this callback function is called.
+"""
+def input_callback(msg):
+
+    global digital_in_0
+    digital_in_0 = msg.DIGIN
+    digital_in_0 = digital_in_0 & 1 # Only look at least significant bit, meaning index 0
 
 
 
@@ -166,16 +187,33 @@ def move_arm(pub_cmd, loop_rate, dest, vel, accel):
 
 
 ############## Your Code Start Here ##############
-
-def move_block(pub_cmd, loop_rate, start_loc, start_height, \
-               end_loc, end_height):
-    global Q
-
-    ### Hint: Use the Q array to map out your towers by location and "height".
-
+def move_block(pub_cmd, loop_rate, start_xw_yw_zw, target_xw_yw_zw, vel, accel):
+   # global variable1
+    # global variable2
     error = 0
 
+    rospy.loginfo("Finding the block...")
+    # move the arm to grip the block
+    move_arm(pub_cmd, loop_rate, start_xw_yw_zw, 4.0, 4.0)
+    time.sleep(0.5)
+    gripper(pub_cmd,loop_rate,suction_on)
+    time.sleep(1.0)
+    # if not digital_in_0:
+    #     error = 1
+    #     gripper(pub_cmd,loop_rate,suction_off)
+    #     rospy.loginfo("Fail to grip the block")
+    #     return error
+    #add in lab5
+    move_arm(pub_cmd, loop_rate, mid_angle, 4.0, 4.0)
+    rospy.loginfo("Moving to the current destination...")
+    #move_arm(pub_cmd,loop_rate,midposition,4.0,4.0)
+    # move the are to the destination
+    move_arm(pub_cmd,loop_rate,target_xw_yw_zw,4.0,4.0)
+    time.sleep(0.5)
+    gripper(pub_cmd,loop_rate,suction_off)
+    time.sleep(1.0)
 
+    # ========================= Student's code ends here ===========================
 
     return error
 
@@ -188,6 +226,7 @@ def main():
     global home
     global Q
     global SPIN_RATE
+    global mid_angle
 
     # Parser
     parser = argparse.ArgumentParser(description='Please specify if using simulator or real robot')
@@ -323,8 +362,16 @@ def main():
 
         loop_count = loop_count - 1
 
-    gripper(pub_command, loop_rate, suction_off)
 
+    gripper(pub_command, loop_rate, suction_off)
+    start_angle = lab_invk(0.4,0.25,0.0355,0)
+    mid_angle = lab_invk(0.25,0.1,0.06,0)
+    dest_angle = lab_invk(0.15,0.45,0.15,0)
+    move_arm(pub_command, loop_rate, mid_angle,4.0, 4.0)
+    if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
+        gripper(pub_command,loop_rate,suction_off)
+        rospy.loginfo("error, arm is halt")
+        return 1
 
 
     ############### Your Code End Here ###############
