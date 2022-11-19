@@ -54,7 +54,7 @@ destination_G = [(0.15,0.35,0.2)] # this G is used for the Green Block detection
 destination_Y = [(0.15,0.25,0.2)] # this Y is used for the orange Block detection
 place1 = [0.15,0.35,0.2]
 place2 = [0.3,0.25,0.2]
-mid_angle = [0.0,0.0,0.0,0.0,0.0,0.0] # middle point for moving the arm
+mid_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0] # middle point for moving the arm
 
 ############## Your Code Start Here ##############
 

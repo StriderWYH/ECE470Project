@@ -11,19 +11,31 @@ import numpy as np
 # tx = 0.244
 # ty = 0.18
 theta = 0
-beta = 377.358
-tx = 43/beta
-ty = 120/beta
+beta = 440
+tx = 0.27272727
+ty = 0.09772727
 
 # Function that converts image coord to world coord
 def IMG2W(col, row):
-    Cencol_y = col - 240
-    Cenrow_x = row - 320
+    # print("col and row are: \n")
+    # print(col)
+    # print(row)
+    # print("\n")
+    Cencol_y = col - 320
+    Cenrow_x = row - 240
+    print("cencol_y and cenrow_x are: \n")
+    print(Cencol_y)
+    print(Cenrow_x)
+    print("\n")
     ca_x = Cenrow_x /beta +tx
     ca_y = Cencol_y /beta +ty
     w_y = (ca_x - ca_y * np.tan(theta))*np.sin(theta) + (ca_y / np.cos(theta))
 
     w_x = (ca_x - ca_y * np.tan(theta))*np.cos(theta)
+    print("w_y and w_x are: \n")
+    print(w_y)
+    print(w_x)
+    print("\n")
     return (w_x,w_y)
 
 
@@ -71,8 +83,8 @@ def blob_search(image_raw, color):
     #lower = (110,50,50)     # blue lower
     #upper = (130,255,255)   # blue upper
     if(color == "green"):
-        lower = (50,50,20)     # green lower
-        upper = (70,255,255)   # green upper
+        lower = (35,50,46)     # green lower
+        upper = (77,255,255)   # green upper
 
     #lower = (0,80,80)     # green and orange lower
     #upper = (80,255,255)   # green and orange upper

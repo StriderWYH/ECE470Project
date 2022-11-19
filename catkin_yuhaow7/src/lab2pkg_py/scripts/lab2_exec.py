@@ -20,8 +20,8 @@ go_away = [270*PI/180.0, -90*PI/180.0, 90*PI/180.0, -90*PI/180.0, -90*PI/180.0, 
 xw_yw_G = []
 xw_yw_Y = []
 
-destination_G = [(0.15,0.35,0.2)] # this G is used for the Green Block detection
-destination_Y = [(0.15,0.25,0.2)] # this Y is used for the orange Block detection
+destination_G = [(0.025,0.05,0.04)] # this G is used for the Green Block detection
+destination_Y = [(0.025,0.025,0.02)] # this Y is used for the orange Block detection
 mid_angle = [0.0,0.0,0.0,0.0,0.0,0.0] # middle point for moving the arm
 
 # Any other global variable you want to define
@@ -268,7 +268,7 @@ class ImageConverter:
         # the image frame to the global world frame.
 
         xw_yw_G = blob_search(cv_image, "green")
-        xw_yw_Y = blob_search(cv_image, "orange")
+        # xw_yw_Y = blob_search(cv_image, "orange")
 
 
 """
@@ -327,20 +327,20 @@ def main():
     print(destination_G)
     #move_arm(pub_command,loop_rate,go_away,4.0,4.0)
     start_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
-    mid_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
+    mid_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0]
     dest_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
 
-    # start_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.030,0)
-    # mid_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.20,0)
-    # dest_angle = lab_invk(destination_G[0][0],destination_G[0][1],0.05,0)
-    # move_arm(pub_command, loop_rate, mid_angle, vel, accel)
-    # if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
-    #     gripper(pub_command,loop_rate,suction_off)
-    #     rospy.loginfo("error, arm is halt")
-    #     return 1
+    start_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.030,0)
+    mid_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.05,0)
+    dest_angle = lab_invk(destination_G[0][0],destination_G[0][1],0.05,0)
+    move_arm(pub_command, loop_rate, mid_angle, vel, accel)
+    if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
+        gripper(pub_command,loop_rate,suction_off)
+        rospy.loginfo("error, arm is halt")
+        return 1
     
     # start_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.033,0)
-    # mid_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.20,0)
+    # mid_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.05,0)
     # dest_angle = lab_invk(destination_G[0][0],destination_G[0][1],0.08,0)
     # move_arm(pub_command, loop_rate, mid_angle, vel, accel)
     # if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
@@ -348,20 +348,20 @@ def main():
     #     rospy.loginfo("error, arm is halt")
     #     return 1
     
-    print("xw_yw_Y[0] is : \n")
-    print(xw_yw_Y[0][0])
-    print(xw_yw_Y[0][1])
-    start_angle = lab_invk(xw_yw_Y_cur[0][0],xw_yw_Y_cur[0][1],0.033,0)
-    mid_angle = lab_invk(xw_yw_Y_cur[0][0],xw_yw_Y_cur[0][1],0.20,0)
-    dest_angle = lab_invk(destination_Y[0][0],destination_Y[0][1],0.05,0)
-    move_arm(pub_command, loop_rate, mid_angle, vel, accel)
-    if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
-        gripper(pub_command,loop_rate,suction_off)
-        rospy.loginfo("error, arm is halt")
-        return 1
+    # print("xw_yw_Y[0] is : \n")
+    # print(xw_yw_Y[0][0])
+    # print(xw_yw_Y[0][1])
+    # start_angle = lab_invk(xw_yw_Y_cur[0][0],xw_yw_Y_cur[0][1],0.033,0)
+    # mid_angle = lab_invk(xw_yw_Y_cur[0][0],xw_yw_Y_cur[0][1],0.06,0)
+    # dest_angle = lab_invk(destination_Y[0][0],destination_Y[0][1],0.05,0)
+    # move_arm(pub_command, loop_rate, mid_angle, vel, accel)
+    # if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
+    #     gripper(pub_command,loop_rate,suction_off)
+    #     rospy.loginfo("error, arm is halt")
+    #     return 1
 
     # start_angle = lab_invk(xw_yw_Y_cur[1][0],xw_yw_Y_cur[1][1],0.033,0)
-    # mid_angle = lab_invk(xw_yw_Y_cur[1][0],xw_yw_Y_cur[1][1],0.20,0)
+    # mid_angle = lab_invk(xw_yw_Y_cur[1][0],xw_yw_Y_cur[1][1],0.05,0)
     # dest_angle = lab_invk(destination_Y[0][0],destination_Y[0][1],0.08,0)
     # move_arm(pub_command, loop_rate, mid_angle, vel, accel)
     # if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
@@ -370,7 +370,7 @@ def main():
     #     return 1
     # ========================= Student's code ends here ===========================
 
-    move_arm(pub_command, loop_rate, go_away, vel, accel)
+    # move_arm(pub_command, loop_rate, go_away, vel, accel)
     rospy.loginfo("Task Completed!")
     print("Use Ctrl+C to exit program")
     rospy.spin()
