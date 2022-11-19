@@ -11,14 +11,14 @@ import numpy as np
 # tx = 0.244
 # ty = 0.18
 theta = 0
-beta = 733.0
-tx = 0
-ty = 0
+beta = 377.358
+tx = 43/beta
+ty = 120/beta
 
 # Function that converts image coord to world coord
 def IMG2W(col, row):
-    Cencol_y = col - 320
-    Cenrow_x = row - 240 
+    Cencol_y = col - 240
+    Cenrow_x = row - 320
     ca_x = Cenrow_x /beta +tx
     ca_y = Cencol_y /beta +ty
     w_y = (ca_x - ca_y * np.tan(theta))*np.sin(theta) + (ca_y / np.cos(theta))
@@ -71,14 +71,14 @@ def blob_search(image_raw, color):
     #lower = (110,50,50)     # blue lower
     #upper = (130,255,255)   # blue upper
     if(color == "green"):
-        lower = (0,0,0)     # green lower
-        upper = (255,255,255)   # green upper
+        lower = (50,50,20)     # green lower
+        upper = (70,255,255)   # green upper
 
     #lower = (0,80,80)     # green and orange lower
     #upper = (80,255,255)   # green and orange upper
     if(color == "orange"):
         lower = (0,80,80)     # orange lower
-        upper = (255,255,255)   # orange upper
+        upper = (25,255,255)   # orange upper
 
     # Define a mask using the lower and upper bounds of the target color
     mask_image = cv2.inRange(hsv_image, lower, upper)

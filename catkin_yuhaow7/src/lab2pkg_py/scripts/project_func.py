@@ -91,6 +91,8 @@ Function that calculates encoder numbers for each motor
 """
 def lab_fk(theta1, theta2, theta3, theta4, theta5, theta6):
 
+	# theta1 = theta1 - PI
+	# theta4 = theta4 + PI/2
 	# Initialize the return_value
 	return_value = [None, None, None, None, None, None]
 	M,S = Get_MS()
