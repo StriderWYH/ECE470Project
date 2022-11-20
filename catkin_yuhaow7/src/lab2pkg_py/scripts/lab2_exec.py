@@ -339,12 +339,14 @@ def main():
     mid_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.1,0)
     
     while len(xw_yw_target_Blue) == 0:
-            i = i 
-    
+        i = i +1
+        print("lenght of xw_yw_target_Blue is:\n")
+        print(len(xw_yw_target_Blue))
     if len(xw_yw_target_Blue)!=0:
         # check whether in the workspace of the arm
-        while xw_yw_target_Blue[0][0] >= 0.40 or xw_yw_target_Blue[0][1] >=0.40:
+        while xw_yw_target_Blue[0][0] >= 0.40 or xw_yw_target_Blue[0][0] <=-0.55 or xw_yw_target_Blue[0][1] >=0.80 or xw_yw_target_Blue[0][1]<= -0.4:
             i = i+1
+            print("the car is out of the workspace! Please drive closer!")
         # check whether the car is parking 
         xw_yw_target_Blue_cur = xw_yw_target_Blue
         time.sleep(5)
