@@ -339,7 +339,8 @@ def main():
     mid_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.1,0)
     
     while len(xw_yw_target_Blue) == 0:
-            i = i +1
+            i = i 
+    
     if len(xw_yw_target_Blue)!=0:
         # check whether in the workspace of the arm
         while xw_yw_target_Blue[0][0] >= 0.40 or xw_yw_target_Blue[0][1] >=0.40:
