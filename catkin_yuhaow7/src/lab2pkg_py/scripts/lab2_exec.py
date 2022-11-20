@@ -19,6 +19,7 @@ go_away = [270*PI/180.0, -90*PI/180.0, 90*PI/180.0, -90*PI/180.0, -90*PI/180.0, 
 # Store world coordinates of green and yellow blocks
 xw_yw_G = []
 xw_yw_Y = []
+xw_yw_target_Blue = []
 
 destination_G = [(0.025,0.05,0.04)] # this G is used for the Green Block detection
 destination_Y = [(0.025,0.025,0.02)] # this Y is used for the orange Block detection
@@ -247,6 +248,7 @@ class ImageConverter:
 
         global xw_yw_G # store found green blocks in this list
         global xw_yw_Y # store found yellow blocks in this list
+        global xw_yw_target_Blue
 
         try:
           # Convert ROS image to OpenCV image
@@ -269,6 +271,7 @@ class ImageConverter:
 
         xw_yw_G = blob_search(cv_image, "green")
         # xw_yw_Y = blob_search(cv_image, "orange")
+        xw_yw_target_Blue = blob_search(cv_image, "blue")
 
 
 """
@@ -324,20 +327,22 @@ def main():
     # print(xw_yw_G[0])
     # print(xw_yw_G[1])
     # print(xw_yw_G[2])
-    print(destination_G)
+    print(len(xw_yw_target_Blue))
     #move_arm(pub_command,loop_rate,go_away,4.0,4.0)
     start_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
     mid_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0]
     dest_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
 
     start_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.030,0)
-    mid_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.05,0)
-    dest_angle = lab_invk(destination_G[0][0],destination_G[0][1],0.05,0)
-    move_arm(pub_command, loop_rate, mid_angle, vel, accel)
-    if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
-        gripper(pub_command,loop_rate,suction_off)
-        rospy.loginfo("error, arm is halt")
-        return 1
+    mid_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.1,0)
+    
+    if len(xw_yw_target_Blue)!=0:
+        move_arm(pub_command, loop_rate, mid_angle, vel, accel)
+        dest_angle = lab_invk(xw_yw_target_Blue[0][0],xw_yw_target_Blue[0][1],0.2,0)
+        if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
+            gripper(pub_command,loop_rate,suction_off)
+            rospy.loginfo("error, arm is halt")
+            return 1
     
     # start_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.033,0)
     # mid_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.05,0)

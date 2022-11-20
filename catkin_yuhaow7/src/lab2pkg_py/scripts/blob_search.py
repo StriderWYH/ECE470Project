@@ -23,10 +23,10 @@ def IMG2W(col, row):
     # print("\n")
     Cencol_y = col - 320
     Cenrow_x = row - 240
-    print("cencol_y and cenrow_x are: \n")
-    print(Cencol_y)
-    print(Cenrow_x)
-    print("\n")
+    # print("cencol_y and cenrow_x are: \n")
+    # print(Cencol_y)
+    # print(Cenrow_x)
+    # print("\n")
     ca_x = Cenrow_x /beta +tx
     ca_y = Cencol_y /beta +ty
     w_y = (ca_x - ca_y * np.tan(theta))*np.sin(theta) + (ca_y / np.cos(theta))
@@ -67,8 +67,8 @@ def blob_search(image_raw, color):
     params.filterByInertia = False
     params.minInertiaRatio = 0.01
     # Filter by Convexity
-    params.filterByConvexity = False
-    params.minConvexity = 0.95
+    params.filterByConvexity = True
+    params.minConvexity = 0.8
 
     # ========================= Student's code ends here ===========================
 
@@ -91,7 +91,15 @@ def blob_search(image_raw, color):
     if(color == "orange"):
         lower = (0,80,80)     # orange lower
         upper = (25,255,255)   # orange upper
-
+    
+    if(color == "blue"):
+        lower = (110,80,80)     # orange lower
+        upper = (130,255,255)   # orange upper
+        params.filterByCircularity = False
+        params.minCircularity = 0.5
+        params.maxCircularity = 1
+  
+       
     # Define a mask using the lower and upper bounds of the target color
     mask_image = cv2.inRange(hsv_image, lower, upper)
 

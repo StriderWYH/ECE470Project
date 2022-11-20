@@ -14,8 +14,8 @@
     <color rgba="0.8 0.0 0.0 1.0"/>
   </material>
 
-  <material name="White">
-    <color rgba="1.0 1.0 1.0 1.0"/>
+  <material name="Purple">
+    <color rgba="0.5 0.0 1.0 1.0"/>
   </material>
 
 
@@ -127,7 +127,7 @@
 
 
       </geometry>
-      <material name="White" />
+      <material name="Purple" />
     </visual>  
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0 " />
@@ -136,10 +136,22 @@
           <cylinder length="${base_height}" radius="${base_radius}" />
 
       </geometry>
+      <surface>
+ <!--###########################-->
+        <friction>
+          <ode>
+            <mu>100</mu>
+            <mu2>100</mu2>
+          </ode>
+        </friction>
+<!--###########################-->
+      </surface>
+
+
     </collision>     
   </link>
   <gazebo reference="base_link">
-    <material>Gazebo/White</material>
+    <material>Gazebo/Blue</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   

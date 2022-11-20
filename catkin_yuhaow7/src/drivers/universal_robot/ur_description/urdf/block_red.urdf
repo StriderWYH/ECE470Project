@@ -8,6 +8,16 @@
     <geometry>
       <box size="0.0318 0.0318 0.0318" />
     </geometry>
+    <surface>
+ <!--###########################-->
+        <friction>
+          <ode>
+            <mu>100</mu>
+            <mu2>100</mu2>
+          </ode>
+        </friction>
+<!--###########################-->
+      </surface>
   </collision>
 
   <visual>
