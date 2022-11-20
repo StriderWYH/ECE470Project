@@ -284,6 +284,7 @@ def main():
     global xw_yw_G
     global destination_G
     global mid_angle
+   
     # global variable1
     # global variable2
 
@@ -327,18 +328,51 @@ def main():
     # print(xw_yw_G[0])
     # print(xw_yw_G[1])
     # print(xw_yw_G[2])
+    print("lenght of xw_yw_target_Blue is:\n")
     print(len(xw_yw_target_Blue))
     #move_arm(pub_command,loop_rate,go_away,4.0,4.0)
     start_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
     mid_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0]
     dest_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
-
+    i = 0
     start_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.030,0)
     mid_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.1,0)
     
+    while len(xw_yw_target_Blue) == 0:
+            i = i +1
     if len(xw_yw_target_Blue)!=0:
+        # check whether in the workspace of the arm
+        while xw_yw_target_Blue[0][0] >= 0.40 or xw_yw_target_Blue[0][1] >=0.40:
+            i = i+1
+        # check whether the car is parking 
+        xw_yw_target_Blue_cur = xw_yw_target_Blue
+        time.sleep(5)
+        while True:
+            # print("lenght of xw_yw_target_Blue is:\n")
+            # print(len(xw_yw_target_Blue))
+            # print(xw_yw_target_Blue)
+            # print("\n")
+            # print("lenght of xw_yw_target_Blue_cur is:\n")
+            # print(len(xw_yw_target_Blue_cur))
+            # print(xw_yw_target_Blue_cur)
+            # print("\n")
+            a = round(xw_yw_target_Blue[0][0],2)
+            b = round(xw_yw_target_Blue_cur[0][0],2)
+            print(a)
+            print("\n")
+            print(b)
+            print("\n")
+            if a == b:
+                break
+            xw_yw_target_Blue_cur = xw_yw_target_Blue
+            time.sleep(5)
+        
+        # print("lenght of xw_yw_target_Blue is:\n")
+        # print(len(xw_yw_target_Blue))
+        # print(xw_yw_target_Blue)
+        # print("\n")
         move_arm(pub_command, loop_rate, mid_angle, vel, accel)
-        dest_angle = lab_invk(xw_yw_target_Blue[0][0],xw_yw_target_Blue[0][1],0.2,0)
+        dest_angle = lab_invk(xw_yw_target_Blue_cur[0][0],xw_yw_target_Blue_cur[0][1],0.10,0)
         if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
             gripper(pub_command,loop_rate,suction_off)
             rospy.loginfo("error, arm is halt")

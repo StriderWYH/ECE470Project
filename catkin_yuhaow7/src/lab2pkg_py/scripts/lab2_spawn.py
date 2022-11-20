@@ -39,8 +39,8 @@ if __name__ == '__main__':
     # Get path to block
     ur_path = rospack.get_path('ur_description')
     block_path = os.path.join(ur_path, 'urdf', 'block.urdf')
-    block1_path = os.path.join(ur_path, 'urdf', 'block_red.urdf')
-    block2_path = os.path.join(ur_path, 'urdf', 'block_yellow.urdf')
+    block1_path = os.path.join(ur_path, 'urdf', 'block_green.urdf')
+    block2_path = os.path.join(ur_path, 'urdf', 'block_green.urdf')
     block3_path = os.path.join(ur_path, 'urdf', 'block_green.urdf')
     block_paths = [block1_path, block2_path, block3_path]
     # Wait for service to start
@@ -59,35 +59,35 @@ if __name__ == '__main__':
     random.shuffle(y_ranlist)
         
     choice_user = raw_input("Spawn randomly or not < 1 for random>: ")
-    if int(choice_user) == 1:
-        xy_ran = []
+    # if int(choice_user) == 1:
+    #     xy_ran = []
 
-        num_block_deleted = int(raw_input("Enter the desired deleted blocks number: "))
-        for j in range(num_block_deleted):
-            block_name = 'block' + str(j + 1)
-            delete(block_name)
+    #     num_block_deleted = int(raw_input("Enter the desired deleted blocks number: "))
+    #     for j in range(num_block_deleted):
+    #         block_name = 'block' + str(j + 1)
+    #         delete(block_name)
 
         
-        num_block_spawned = int(raw_input("Enter the desired spawned blocks number: "))
-        if num_block_spawned < 0 | num_block_spawned > 10:
-            num_block_spawned = 10
-        for i in range(num_block_spawned):
-            block_name = 'block' + str(i+1)
+    #     num_block_spawned = int(raw_input("Enter the desired spawned blocks number: "))
+    #     if num_block_spawned < 0 | num_block_spawned > 10:
+    #         num_block_spawned = 10
+    #     for i in range(num_block_spawned):
+    #         block_name = 'block' + str(i+1)
 
-            x_ran = x_ranlist[i]
-            y_ran = y_ranlist[i]
-            xy_ran.append((x_ran,y_ran))
-            pose = Pose(Point(x_ran, y_ran, 0), Quaternion(0, 0, 0, 0))
-            spawn(block_name, open(block_paths[random.randint(0,2)], 'r').read(), 'block', pose, 'world')
-    else:
+    #         x_ran = x_ranlist[i]
+    #         y_ran = y_ranlist[i]
+    #         xy_ran.append((x_ran,y_ran))
+    #         pose = Pose(Point(x_ran, y_ran, 0), Quaternion(0, 0, 0, 0))
+    #         spawn(block_name, open(block_paths[random.randint(0,2)], 'r').read(), 'block', pose, 'world')
+    # else:
     # Starting location ?
-        starting_location = None
-        while not starting_location:
-            starting_location = raw_input("Enter starting location number <Either 1 2 or 3>: ")
-            starting_location = int(starting_location)
-            if (starting_location != 1) and (starting_location != 2) and (starting_location != 3):
-                starting_location = None
-                print("Wrong input \n\n")
+    starting_location = None
+    while not starting_location:
+        starting_location = raw_input("Enter starting location number <Either 1 2 or 3>: ")
+        starting_location = int(starting_location)
+        if (starting_location != 1) and (starting_location != 2) and (starting_location != 3):
+            starting_location = None
+            print("Wrong input \n\n")
 
         # 0-indexed
         starting_location -= 1

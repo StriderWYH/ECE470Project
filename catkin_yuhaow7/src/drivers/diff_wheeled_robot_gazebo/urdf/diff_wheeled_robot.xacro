@@ -66,7 +66,7 @@
 
 
   <!-- Hokuyo Laser scanner -->
-  <xacro:property name="hokuyo_size" value="0.05" />
+  <xacro:property name="hokuyo_size" value="0.01" />
 
 
 

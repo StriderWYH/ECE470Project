@@ -32,10 +32,10 @@ def IMG2W(col, row):
     w_y = (ca_x - ca_y * np.tan(theta))*np.sin(theta) + (ca_y / np.cos(theta))
 
     w_x = (ca_x - ca_y * np.tan(theta))*np.cos(theta)
-    print("w_y and w_x are: \n")
-    print(w_y)
-    print(w_x)
-    print("\n")
+    # print("w_y and w_x are: \n")
+    # print(w_y)
+    # print(w_x)
+    # print("\n")
     return (w_x,w_y)
 
 
@@ -57,6 +57,11 @@ def blob_search(image_raw, color):
     params.filterByArea = True
     params.minArea = 100
     params.maxArea = 1000
+    if color == "blue":
+        params.filterByArea = False
+        params.minArea = 100
+        params.maxArea = 1000
+   
 
     # Filter by Circularity
     params.filterByCircularity = True
@@ -95,9 +100,7 @@ def blob_search(image_raw, color):
     if(color == "blue"):
         lower = (110,80,80)     # orange lower
         upper = (130,255,255)   # orange upper
-        params.filterByCircularity = False
-        params.minCircularity = 0.5
-        params.maxCircularity = 1
+        
   
        
     # Define a mask using the lower and upper bounds of the target color

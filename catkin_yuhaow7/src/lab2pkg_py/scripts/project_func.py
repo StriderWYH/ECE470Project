@@ -95,23 +95,23 @@ def lab_fk(theta1, theta2, theta3, theta4, theta5, theta6):
 	# theta4 = theta4 + PI/2
 	# Initialize the return_value
 	return_value = [None, None, None, None, None, None]
-	M,S = Get_MS()
-	print("Foward kinematics calculated:\n")
+	# M,S = Get_MS()
+	# print("Foward kinematics calculated:\n")
 
-	# =================== Your code starts here ====================#
-	T0 = expm(theta1*calculate(S[0]))
-	T1 = expm(theta2*calculate(S[1]))
-	T2 = expm(theta3*calculate(S[2]))
-	T3 = expm(theta4*calculate(S[3]))
-	T4 = expm(theta5*calculate(S[4]))
-	T5 = expm(theta6*calculate(S[5]))
-	T = np.matmul(T0,T1)
-	T = np.matmul(T,T2)
-	T = np.matmul(T,T3)
-	T = np.matmul(T,T4)
-	T = np.matmul(T,T5)
-	T = np.matmul(T,M)
-	print(str(T) + "\n")
+	# # =================== Your code starts here ====================#
+	# T0 = expm(theta1*calculate(S[0]))
+	# T1 = expm(theta2*calculate(S[1]))
+	# T2 = expm(theta3*calculate(S[2]))
+	# T3 = expm(theta4*calculate(S[3]))
+	# T4 = expm(theta5*calculate(S[4]))
+	# T5 = expm(theta6*calculate(S[5]))
+	# T = np.matmul(T0,T1)
+	# T = np.matmul(T,T2)
+	# T = np.matmul(T,T3)
+	# T = np.matmul(T,T4)
+	# T = np.matmul(T,T5)
+	# T = np.matmul(T,M)
+	# print(str(T) + "\n")
 
 	# ==============================================================#
 
@@ -174,10 +174,10 @@ def lab_invk(xWgrip, yWgrip, zWgrip, yaw_WgripDegree):
 	#theta5
 	theta5 = -PI/2
  
-	print("theta2\n")
-	print(theta2)
-	print("theta3\n")
-	print(theta3)
+	# print("theta2\n")
+	# print(theta2)
+	# print("theta3\n")
+	# print(theta3)
 	#theta1 = theta1 * PI/180
 	#theta2 = theta2 * PI/180
 	#theta3 = theta3 * PI/180
