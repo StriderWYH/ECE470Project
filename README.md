@@ -1,5 +1,5 @@
 # ECE470Project
-This README is for project update 1.
+This README is for project update 2.
 
 We modify the code from lab2 as the start code of our project. The source folder contains .py files for the ROS. 
 The outline of our project is :
