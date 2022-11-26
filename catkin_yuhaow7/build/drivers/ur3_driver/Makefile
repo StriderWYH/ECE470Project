@@ -77,17 +77,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -132,6 +121,17 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -211,6 +211,66 @@ ur3_driver_generate_messages_py/fast:
 .PHONY : ur3_driver_generate_messages_py/fast
 
 # Convenience name for target.
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+ur3_driver_generate_messages_nodejs: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/rule
+
+.PHONY : ur3_driver_generate_messages_nodejs
+
+# fast build rule for target.
+ur3_driver_generate_messages_nodejs/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/build
+.PHONY : ur3_driver_generate_messages_nodejs/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/rule
+
+# Convenience name for target.
+ur3_driver_genlisp: drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/rule
+
+.PHONY : ur3_driver_genlisp
+
+# fast build rule for target.
+ur3_driver_genlisp/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/build
+.PHONY : ur3_driver_genlisp/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/rule
+
+# Convenience name for target.
+ur3_driver_geneus: drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/rule
+
+.PHONY : ur3_driver_geneus
+
+# fast build rule for target.
+ur3_driver_geneus/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/build
+.PHONY : ur3_driver_geneus/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+ur3_driver_generate_messages_eus: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/rule
+
+.PHONY : ur3_driver_generate_messages_eus
+
+# fast build rule for target.
+ur3_driver_generate_messages_eus/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/build
+.PHONY : ur3_driver_generate_messages_eus/fast
+
+# Convenience name for target.
 drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_py.dir/rule:
 	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_py.dir/rule
 .PHONY : drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_py.dir/rule
@@ -239,6 +299,21 @@ controller_manager_msgs_generate_messages_nodejs: drivers/ur3_driver/CMakeFiles/
 controller_manager_msgs_generate_messages_nodejs/fast:
 	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/build.make drivers/ur3_driver/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/build
 .PHONY : controller_manager_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_position.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_position.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_position.dir/rule
+
+# Convenience name for target.
+_ur3_driver_generate_messages_check_deps_robot1_position: drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_position.dir/rule
+
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_position
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot1_position/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_position.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_position.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_position/fast
 
 # Convenience name for target.
 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_position.dir/rule:
@@ -284,21 +359,6 @@ controller_manager_msgs_generate_messages_eus: drivers/ur3_driver/CMakeFiles/con
 controller_manager_msgs_generate_messages_eus/fast:
 	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build
 .PHONY : controller_manager_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/rule:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/rule
-.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-ur3_driver_generate_messages_eus: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/rule
-
-.PHONY : ur3_driver_generate_messages_eus
-
-# fast build rule for target.
-ur3_driver_generate_messages_eus/fast:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/build
-.PHONY : ur3_driver_generate_messages_eus/fast
 
 # Convenience name for target.
 drivers/ur3_driver/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/rule:
@@ -391,6 +451,21 @@ ur3_driver_generate_messages/fast:
 .PHONY : ur3_driver_generate_messages/fast
 
 # Convenience name for target.
+drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_command.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_command.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_command.dir/rule
+
+# Convenience name for target.
+_ur3_driver_generate_messages_check_deps_robot1_command: drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_command.dir/rule
+
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_command
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot1_command/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_command.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_command.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_command/fast
+
+# Convenience name for target.
 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_command.dir/rule:
 	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_command.dir/rule
 .PHONY : drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_command.dir/rule
@@ -404,6 +479,126 @@ _ur3_driver_generate_messages_check_deps_command: drivers/ur3_driver/CMakeFiles/
 _ur3_driver_generate_messages_check_deps_command/fast:
 	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_command.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_command.dir/build
 .PHONY : _ur3_driver_generate_messages_check_deps_command/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_gripper_input.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_gripper_input.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_gripper_input.dir/rule
+
+# Convenience name for target.
+_ur3_driver_generate_messages_check_deps_robot1_gripper_input: drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_gripper_input.dir/rule
+
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_gripper_input
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot1_gripper_input/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_gripper_input.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_gripper_input.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_gripper_input/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_gripper_input.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_gripper_input.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_gripper_input.dir/rule
+
+# Convenience name for target.
+_ur3_driver_generate_messages_check_deps_robot2_gripper_input: drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_gripper_input.dir/rule
+
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_gripper_input
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot2_gripper_input/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_gripper_input.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_gripper_input.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_gripper_input/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/rule
+
+# Convenience name for target.
+ur3_driver_gennodejs: drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/rule
+
+.PHONY : ur3_driver_gennodejs
+
+# fast build rule for target.
+ur3_driver_gennodejs/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/build
+.PHONY : ur3_driver_gennodejs/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/rule
+
+# Convenience name for target.
+_ur3_driver_generate_messages_check_deps_gripper_input: drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/rule
+
+.PHONY : _ur3_driver_generate_messages_check_deps_gripper_input
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_gripper_input/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_gripper_input/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+ur3_driver_generate_messages_lisp: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/rule
+
+.PHONY : ur3_driver_generate_messages_lisp
+
+# fast build rule for target.
+ur3_driver_generate_messages_lisp/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/build
+.PHONY : ur3_driver_generate_messages_lisp/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+control_msgs_generate_messages_eus: drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+
+.PHONY : control_msgs_generate_messages_eus
+
+# fast build rule for target.
+control_msgs_generate_messages_eus/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/build
+.PHONY : control_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_command.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_command.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_command.dir/rule
+
+# Convenience name for target.
+_ur3_driver_generate_messages_check_deps_robot2_command: drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_command.dir/rule
+
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_command
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot2_command/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_command.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_command.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_command/fast
+
+# Convenience name for target.
+drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_position.dir/rule:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_position.dir/rule
+.PHONY : drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_position.dir/rule
+
+# Convenience name for target.
+_ur3_driver_generate_messages_check_deps_robot2_position: drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_position.dir/rule
+
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_position
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot2_position/fast:
+	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_position.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_position.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_position/fast
 
 # Convenience name for target.
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp.dir/rule:
@@ -434,111 +629,6 @@ ur3_driver_gencpp: drivers/ur3_driver/CMakeFiles/ur3_driver_gencpp.dir/rule
 ur3_driver_gencpp/fast:
 	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_gencpp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_gencpp.dir/build
 .PHONY : ur3_driver_gencpp/fast
-
-# Convenience name for target.
-drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-.PHONY : drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_eus: drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-
-.PHONY : control_msgs_generate_messages_eus
-
-# fast build rule for target.
-control_msgs_generate_messages_eus/fast:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/build
-.PHONY : control_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/rule:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/rule
-.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-ur3_driver_generate_messages_lisp: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/rule
-
-.PHONY : ur3_driver_generate_messages_lisp
-
-# fast build rule for target.
-ur3_driver_generate_messages_lisp/fast:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/build
-.PHONY : ur3_driver_generate_messages_lisp/fast
-
-# Convenience name for target.
-drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/rule:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/rule
-.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/rule
-
-# Convenience name for target.
-ur3_driver_geneus: drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/rule
-
-.PHONY : ur3_driver_geneus
-
-# fast build rule for target.
-ur3_driver_geneus/fast:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/build
-.PHONY : ur3_driver_geneus/fast
-
-# Convenience name for target.
-drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/rule:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/rule
-.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/rule
-
-# Convenience name for target.
-ur3_driver_genlisp: drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/rule
-
-.PHONY : ur3_driver_genlisp
-
-# fast build rule for target.
-ur3_driver_genlisp/fast:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/build
-.PHONY : ur3_driver_genlisp/fast
-
-# Convenience name for target.
-drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/rule:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/rule
-.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-ur3_driver_generate_messages_nodejs: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/rule
-
-.PHONY : ur3_driver_generate_messages_nodejs
-
-# fast build rule for target.
-ur3_driver_generate_messages_nodejs/fast:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/build
-.PHONY : ur3_driver_generate_messages_nodejs/fast
-
-# Convenience name for target.
-drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/rule:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/rule
-.PHONY : drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/rule
-
-# Convenience name for target.
-_ur3_driver_generate_messages_check_deps_gripper_input: drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/rule
-
-.PHONY : _ur3_driver_generate_messages_check_deps_gripper_input
-
-# fast build rule for target.
-_ur3_driver_generate_messages_check_deps_gripper_input/fast:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/build
-.PHONY : _ur3_driver_generate_messages_check_deps_gripper_input/fast
-
-# Convenience name for target.
-drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/rule:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/rule
-.PHONY : drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/rule
-
-# Convenience name for target.
-ur3_driver_gennodejs: drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/rule
-
-.PHONY : ur3_driver_gennodejs
-
-# fast build rule for target.
-ur3_driver_gennodejs/fast:
-	cd /home/ur3/catkin_yuhaow7/build && $(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/build
-.PHONY : ur3_driver_gennodejs/fast
 
 src/do_output.o: src/do_output.cpp.o
 
@@ -710,17 +800,20 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... ur3_driver"
 	@echo "... ur3_driver_genpy"
 	@echo "... ur3_driver_generate_messages_py"
+	@echo "... ur3_driver_generate_messages_nodejs"
+	@echo "... ur3_driver_genlisp"
+	@echo "... ur3_driver_geneus"
+	@echo "... ur3_driver_generate_messages_eus"
 	@echo "... control_msgs_generate_messages_py"
 	@echo "... controller_manager_msgs_generate_messages_nodejs"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot1_position"
 	@echo "... _ur3_driver_generate_messages_check_deps_position"
 	@echo "... control_msgs_generate_messages_lisp"
 	@echo "... controller_manager_msgs_generate_messages_eus"
-	@echo "... ur3_driver_generate_messages_eus"
 	@echo "... install"
 	@echo "... controller_manager_msgs_generate_messages_cpp"
 	@echo "... install/local"
@@ -729,17 +822,20 @@ help:
 	@echo "... control_msgs_generate_messages_nodejs"
 	@echo "... controller_manager_msgs_generate_messages_py"
 	@echo "... ur3_driver_generate_messages"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot1_command"
 	@echo "... _ur3_driver_generate_messages_check_deps_command"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot1_gripper_input"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot2_gripper_input"
+	@echo "... install/strip"
+	@echo "... ur3_driver_gennodejs"
+	@echo "... _ur3_driver_generate_messages_check_deps_gripper_input"
+	@echo "... ur3_driver_generate_messages_lisp"
+	@echo "... control_msgs_generate_messages_eus"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot2_command"
+	@echo "... edit_cache"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot2_position"
 	@echo "... ur3_driver_generate_messages_cpp"
 	@echo "... ur3_driver_gencpp"
-	@echo "... control_msgs_generate_messages_eus"
-	@echo "... ur3_driver_generate_messages_lisp"
-	@echo "... ur3_driver_geneus"
-	@echo "... ur3_driver_genlisp"
-	@echo "... ur3_driver_generate_messages_nodejs"
-	@echo "... install/strip"
-	@echo "... _ur3_driver_generate_messages_check_deps_gripper_input"
-	@echo "... ur3_driver_gennodejs"
 	@echo "... src/do_output.o"
 	@echo "... src/do_output.i"
 	@echo "... src/do_output.s"

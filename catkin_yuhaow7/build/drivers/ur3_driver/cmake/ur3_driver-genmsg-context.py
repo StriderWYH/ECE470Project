@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/position.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg"
+messages_str = "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/position.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_command.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_position.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_position.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_gripper_input.msg;/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_gripper_input.msg"
 services_str = ""
 pkg_name = "ur3_driver"
 dependencies_str = "std_msgs"

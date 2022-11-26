@@ -1,6 +1,14 @@
 from ur3_driver.msg import command
 from ur3_driver.msg import position
 from ur3_driver.msg import gripper_input
+
+from ur3_driver.msg import robot1_command
+from ur3_driver.msg import robot2_command
+from ur3_driver.msg import robot1_position
+from ur3_driver.msg import robot2_position
+from ur3_driver.msg import robot1_gripper_input
+from ur3_driver.msg import robot2_gripper_input
+
 import rospkg
 
 PI = 3.1415926535

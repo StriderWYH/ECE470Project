@@ -2935,6 +2935,58 @@ ur3_driver_generate_messages_py/fast:
 .PHONY : ur3_driver_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named ur3_driver_generate_messages_nodejs
+
+# Build rule for target.
+ur3_driver_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_generate_messages_nodejs
+.PHONY : ur3_driver_generate_messages_nodejs
+
+# fast build rule for target.
+ur3_driver_generate_messages_nodejs/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/build
+.PHONY : ur3_driver_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named ur3_driver_genlisp
+
+# Build rule for target.
+ur3_driver_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_genlisp
+.PHONY : ur3_driver_genlisp
+
+# fast build rule for target.
+ur3_driver_genlisp/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/build
+.PHONY : ur3_driver_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named ur3_driver_geneus
+
+# Build rule for target.
+ur3_driver_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_geneus
+.PHONY : ur3_driver_geneus
+
+# fast build rule for target.
+ur3_driver_geneus/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/build
+.PHONY : ur3_driver_geneus/fast
+
+#=============================================================================
+# Target rules for targets named ur3_driver_generate_messages_eus
+
+# Build rule for target.
+ur3_driver_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_generate_messages_eus
+.PHONY : ur3_driver_generate_messages_eus
+
+# fast build rule for target.
+ur3_driver_generate_messages_eus/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/build
+.PHONY : ur3_driver_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named control_msgs_generate_messages_py
 
 # Build rule for target.
@@ -2959,6 +3011,19 @@ controller_manager_msgs_generate_messages_nodejs: cmake_check_build_system
 controller_manager_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f drivers/ur3_driver/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/build.make drivers/ur3_driver/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/build
 .PHONY : controller_manager_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named _ur3_driver_generate_messages_check_deps_robot1_position
+
+# Build rule for target.
+_ur3_driver_generate_messages_check_deps_robot1_position: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ur3_driver_generate_messages_check_deps_robot1_position
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_position
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot1_position/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_position.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_position.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_position/fast
 
 #=============================================================================
 # Target rules for targets named _ur3_driver_generate_messages_check_deps_position
@@ -2998,19 +3063,6 @@ controller_manager_msgs_generate_messages_eus: cmake_check_build_system
 controller_manager_msgs_generate_messages_eus/fast:
 	$(MAKE) -f drivers/ur3_driver/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build
 .PHONY : controller_manager_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named ur3_driver_generate_messages_eus
-
-# Build rule for target.
-ur3_driver_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_generate_messages_eus
-.PHONY : ur3_driver_generate_messages_eus
-
-# fast build rule for target.
-ur3_driver_generate_messages_eus/fast:
-	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus.dir/build
-.PHONY : ur3_driver_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named controller_manager_msgs_generate_messages_cpp
@@ -3091,6 +3143,19 @@ ur3_driver_generate_messages/fast:
 .PHONY : ur3_driver_generate_messages/fast
 
 #=============================================================================
+# Target rules for targets named _ur3_driver_generate_messages_check_deps_robot1_command
+
+# Build rule for target.
+_ur3_driver_generate_messages_check_deps_robot1_command: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ur3_driver_generate_messages_check_deps_robot1_command
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_command
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot1_command/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_command.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_command.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_command/fast
+
+#=============================================================================
 # Target rules for targets named _ur3_driver_generate_messages_check_deps_command
 
 # Build rule for target.
@@ -3102,6 +3167,110 @@ _ur3_driver_generate_messages_check_deps_command: cmake_check_build_system
 _ur3_driver_generate_messages_check_deps_command/fast:
 	$(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_command.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_command.dir/build
 .PHONY : _ur3_driver_generate_messages_check_deps_command/fast
+
+#=============================================================================
+# Target rules for targets named _ur3_driver_generate_messages_check_deps_robot1_gripper_input
+
+# Build rule for target.
+_ur3_driver_generate_messages_check_deps_robot1_gripper_input: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ur3_driver_generate_messages_check_deps_robot1_gripper_input
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_gripper_input
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot1_gripper_input/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_gripper_input.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot1_gripper_input.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot1_gripper_input/fast
+
+#=============================================================================
+# Target rules for targets named _ur3_driver_generate_messages_check_deps_robot2_gripper_input
+
+# Build rule for target.
+_ur3_driver_generate_messages_check_deps_robot2_gripper_input: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ur3_driver_generate_messages_check_deps_robot2_gripper_input
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_gripper_input
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot2_gripper_input/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_gripper_input.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_gripper_input.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_gripper_input/fast
+
+#=============================================================================
+# Target rules for targets named ur3_driver_gennodejs
+
+# Build rule for target.
+ur3_driver_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_gennodejs
+.PHONY : ur3_driver_gennodejs
+
+# fast build rule for target.
+ur3_driver_gennodejs/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/build
+.PHONY : ur3_driver_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named _ur3_driver_generate_messages_check_deps_gripper_input
+
+# Build rule for target.
+_ur3_driver_generate_messages_check_deps_gripper_input: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ur3_driver_generate_messages_check_deps_gripper_input
+.PHONY : _ur3_driver_generate_messages_check_deps_gripper_input
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_gripper_input/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_gripper_input/fast
+
+#=============================================================================
+# Target rules for targets named ur3_driver_generate_messages_lisp
+
+# Build rule for target.
+ur3_driver_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_generate_messages_lisp
+.PHONY : ur3_driver_generate_messages_lisp
+
+# fast build rule for target.
+ur3_driver_generate_messages_lisp/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/build
+.PHONY : ur3_driver_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named control_msgs_generate_messages_eus
+
+# Build rule for target.
+control_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_eus
+.PHONY : control_msgs_generate_messages_eus
+
+# fast build rule for target.
+control_msgs_generate_messages_eus/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/build
+.PHONY : control_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _ur3_driver_generate_messages_check_deps_robot2_command
+
+# Build rule for target.
+_ur3_driver_generate_messages_check_deps_robot2_command: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ur3_driver_generate_messages_check_deps_robot2_command
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_command
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot2_command/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_command.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_command.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_command/fast
+
+#=============================================================================
+# Target rules for targets named _ur3_driver_generate_messages_check_deps_robot2_position
+
+# Build rule for target.
+_ur3_driver_generate_messages_check_deps_robot2_position: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ur3_driver_generate_messages_check_deps_robot2_position
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_position
+
+# fast build rule for target.
+_ur3_driver_generate_messages_check_deps_robot2_position/fast:
+	$(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_position.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_position.dir/build
+.PHONY : _ur3_driver_generate_messages_check_deps_robot2_position/fast
 
 #=============================================================================
 # Target rules for targets named ur3_driver_generate_messages_cpp
@@ -3128,97 +3297,6 @@ ur3_driver_gencpp: cmake_check_build_system
 ur3_driver_gencpp/fast:
 	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_gencpp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_gencpp.dir/build
 .PHONY : ur3_driver_gencpp/fast
-
-#=============================================================================
-# Target rules for targets named control_msgs_generate_messages_eus
-
-# Build rule for target.
-control_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_eus
-.PHONY : control_msgs_generate_messages_eus
-
-# fast build rule for target.
-control_msgs_generate_messages_eus/fast:
-	$(MAKE) -f drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make drivers/ur3_driver/CMakeFiles/control_msgs_generate_messages_eus.dir/build
-.PHONY : control_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named ur3_driver_generate_messages_lisp
-
-# Build rule for target.
-ur3_driver_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_generate_messages_lisp
-.PHONY : ur3_driver_generate_messages_lisp
-
-# fast build rule for target.
-ur3_driver_generate_messages_lisp/fast:
-	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp.dir/build
-.PHONY : ur3_driver_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named ur3_driver_geneus
-
-# Build rule for target.
-ur3_driver_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_geneus
-.PHONY : ur3_driver_geneus
-
-# fast build rule for target.
-ur3_driver_geneus/fast:
-	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_geneus.dir/build
-.PHONY : ur3_driver_geneus/fast
-
-#=============================================================================
-# Target rules for targets named ur3_driver_genlisp
-
-# Build rule for target.
-ur3_driver_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_genlisp
-.PHONY : ur3_driver_genlisp
-
-# fast build rule for target.
-ur3_driver_genlisp/fast:
-	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_genlisp.dir/build
-.PHONY : ur3_driver_genlisp/fast
-
-#=============================================================================
-# Target rules for targets named ur3_driver_generate_messages_nodejs
-
-# Build rule for target.
-ur3_driver_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_generate_messages_nodejs
-.PHONY : ur3_driver_generate_messages_nodejs
-
-# fast build rule for target.
-ur3_driver_generate_messages_nodejs/fast:
-	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/build
-.PHONY : ur3_driver_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named _ur3_driver_generate_messages_check_deps_gripper_input
-
-# Build rule for target.
-_ur3_driver_generate_messages_check_deps_gripper_input: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _ur3_driver_generate_messages_check_deps_gripper_input
-.PHONY : _ur3_driver_generate_messages_check_deps_gripper_input
-
-# fast build rule for target.
-_ur3_driver_generate_messages_check_deps_gripper_input/fast:
-	$(MAKE) -f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/build.make drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_gripper_input.dir/build
-.PHONY : _ur3_driver_generate_messages_check_deps_gripper_input/fast
-
-#=============================================================================
-# Target rules for targets named ur3_driver_gennodejs
-
-# Build rule for target.
-ur3_driver_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ur3_driver_gennodejs
-.PHONY : ur3_driver_gennodejs
-
-# fast build rule for target.
-ur3_driver_gennodejs/fast:
-	$(MAKE) -f drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/build.make drivers/ur3_driver/CMakeFiles/ur3_driver_gennodejs.dir/build
-.PHONY : ur3_driver_gennodejs/fast
 
 #=============================================================================
 # Target rules for targets named _run_tests_ur_bringup_roslaunch-check
@@ -5409,28 +5487,34 @@ help:
 	@echo "... ur3_driver"
 	@echo "... ur3_driver_genpy"
 	@echo "... ur3_driver_generate_messages_py"
+	@echo "... ur3_driver_generate_messages_nodejs"
+	@echo "... ur3_driver_genlisp"
+	@echo "... ur3_driver_geneus"
+	@echo "... ur3_driver_generate_messages_eus"
 	@echo "... control_msgs_generate_messages_py"
 	@echo "... controller_manager_msgs_generate_messages_nodejs"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot1_position"
 	@echo "... _ur3_driver_generate_messages_check_deps_position"
 	@echo "... control_msgs_generate_messages_lisp"
 	@echo "... controller_manager_msgs_generate_messages_eus"
-	@echo "... ur3_driver_generate_messages_eus"
 	@echo "... controller_manager_msgs_generate_messages_cpp"
 	@echo "... control_msgs_generate_messages_cpp"
 	@echo "... controller_manager_msgs_generate_messages_lisp"
 	@echo "... control_msgs_generate_messages_nodejs"
 	@echo "... controller_manager_msgs_generate_messages_py"
 	@echo "... ur3_driver_generate_messages"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot1_command"
 	@echo "... _ur3_driver_generate_messages_check_deps_command"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot1_gripper_input"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot2_gripper_input"
+	@echo "... ur3_driver_gennodejs"
+	@echo "... _ur3_driver_generate_messages_check_deps_gripper_input"
+	@echo "... ur3_driver_generate_messages_lisp"
+	@echo "... control_msgs_generate_messages_eus"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot2_command"
+	@echo "... _ur3_driver_generate_messages_check_deps_robot2_position"
 	@echo "... ur3_driver_generate_messages_cpp"
 	@echo "... ur3_driver_gencpp"
-	@echo "... control_msgs_generate_messages_eus"
-	@echo "... ur3_driver_generate_messages_lisp"
-	@echo "... ur3_driver_geneus"
-	@echo "... ur3_driver_genlisp"
-	@echo "... ur3_driver_generate_messages_nodejs"
-	@echo "... _ur3_driver_generate_messages_check_deps_gripper_input"
-	@echo "... ur3_driver_gennodejs"
 	@echo "... _run_tests_ur_bringup_roslaunch-check"
 	@echo "... _run_tests_ur_bringup"
 	@echo "... clean_test_results_ur_bringup"

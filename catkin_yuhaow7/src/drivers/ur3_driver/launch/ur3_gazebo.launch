@@ -14,7 +14,7 @@
   </include>
    
   
-
+  
   <!-- send robot urdf to param server -->
   <include file="$(find ur_description)/launch/ur3_upload.launch">
     <arg name="limited" value="$(arg limited)"/>
@@ -34,6 +34,11 @@
   <!-- load other controllers -->
   <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_position_controller" />
 
+
+  
+
+
+
   <!-- <node name="spawn_block" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block" /> -->
 
   <node name="spawn_camera" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/camera.urdf -urdf -model camera -x 0.29 -y 0.105 -z 1.65" />
@@ -49,7 +54,7 @@
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-	args="-urdf -model diff_wheeled_robot -param robot_description2"/> 
+	args="-urdf -model diff_wheeled_robot -param robot_description2 -x -0.7 -y -1.1 -z 0"/> 
 
   <include file="$(find ur3_driver)/launch/ece470_vision_driver.launch"/>
 

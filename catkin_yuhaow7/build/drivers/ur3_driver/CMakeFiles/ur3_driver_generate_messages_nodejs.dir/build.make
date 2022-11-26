@@ -53,29 +53,71 @@ CMAKE_BINARY_DIR = /home/ur3/catkin_yuhaow7/build
 # Include the progress variables for this target.
 include drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/progress.make
 
-drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/command.js
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_position.js
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/position.js
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_position.js
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_command.js
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/command.js
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_gripper_input.js
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_gripper_input.js
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_command.js
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/gripper_input.js
 
 
-/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/command.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/command.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from ur3_driver/command.msg"
-	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_position.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_position.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_position.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from ur3_driver/robot1_position.msg"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
 
 /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/position.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/position.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/position.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from ur3_driver/position.msg"
 	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
 
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_position.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_position.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_position.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from ur3_driver/robot2_position.msg"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_command.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_command.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_command.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from ur3_driver/robot1_command.msg"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/command.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/command.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from ur3_driver/command.msg"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_gripper_input.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_gripper_input.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_gripper_input.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from ur3_driver/robot1_gripper_input.msg"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_gripper_input.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_gripper_input.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_gripper_input.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from ur3_driver/robot2_gripper_input.msg"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_command.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_command.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from ur3_driver/robot2_command.msg"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
+
 /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/gripper_input.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/gripper_input.js: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from ur3_driver/gripper_input.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Javascript code from ur3_driver/gripper_input.msg"
 	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg
 
 ur3_driver_generate_messages_nodejs: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs
-ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/command.js
+ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_position.js
 ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/position.js
+ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_position.js
+ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_command.js
+ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/command.js
+ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_gripper_input.js
+ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_gripper_input.js
+ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_command.js
 ur3_driver_generate_messages_nodejs: /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/gripper_input.js
 ur3_driver_generate_messages_nodejs: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_nodejs.dir/build.make
 

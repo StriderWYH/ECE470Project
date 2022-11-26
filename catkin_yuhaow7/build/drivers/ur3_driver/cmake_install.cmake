@@ -37,6 +37,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg"
     "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/position.msg"
     "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg"
+    "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_command.msg"
+    "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg"
+    "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_position.msg"
+    "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_position.msg"
+    "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_gripper_input.msg"
+    "/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_gripper_input.msg"
     )
 endif()
 

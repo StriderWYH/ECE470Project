@@ -168,7 +168,7 @@
       <geometry>
 	<sphere radius="${caster_f_radius}" />
       </geometry>
-      <material name="Black" />
+      <material name="Purple" />
     </visual>  
 
 
@@ -200,6 +200,7 @@
 
 
   <gazebo reference="caster_front_link">
+    <material>Gazebo/Blue</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
     
@@ -219,7 +220,7 @@
 
 
       </geometry>
-      <material name="Black" />
+      <material name="Purple" />
     </visual>  
 
 
@@ -247,6 +248,7 @@
 
 
   <gazebo reference="caster_back_link">
+    <material>Gazebo/Blue</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
 

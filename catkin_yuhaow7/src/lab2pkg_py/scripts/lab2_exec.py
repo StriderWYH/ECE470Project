@@ -15,7 +15,7 @@ from blob_search import *
 
 # Position for UR3 not blocking the camera
 go_away = [270*PI/180.0, -90*PI/180.0, 90*PI/180.0, -90*PI/180.0, -90*PI/180.0, 135*PI/180.0]
-
+go_down = [270*PI/180.0, -90*PI/180.0, 90*PI/180.0, -90*PI/180.0, 0*PI/180.0, 135*PI/180.0]
 # Store world coordinates of green and yellow blocks
 xw_yw_G = []
 xw_yw_Y = []
@@ -24,6 +24,7 @@ xw_yw_target_Blue = []
 destination_G = [(0.025,0.05,0.04)] # this G is used for the Green Block detection
 destination_Y = [(0.025,0.025,0.02)] # this Y is used for the orange Block detection
 mid_angle = [0.0,0.0,0.0,0.0,0.0,0.0] # middle point for moving the arm
+
 
 # Any other global variable you want to define
 # Hints: where to put the blocks?
@@ -40,18 +41,26 @@ SPIN_RATE = 20
 home = [0*PI/180.0, 0*PI/180.0, 0*PI/180.0, 0*PI/180.0, 0*PI/180.0, 0*PI/180.0]
 
 # UR3 current position, using home position for initialization
-current_position = copy.deepcopy(home)
+current_position_1 = copy.deepcopy(home)
+current_position_2 = copy.deepcopy(home)
 
-thetas = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+thetas_1 = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+thetas_2 = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
-digital_in_0 = 0
-analog_in_0 = 0.0
+digital_in_0_1 = 0
+digital_in_0_2 = 0
+
+analog_in_0_1 = 0.0
+analog_in_0_2 = 0.0
 
 suction_on = True
 suction_off = False
 
-current_io_0 = False
-current_position_set = False
+current_io_0_1 = False
+current_position_set_1 = False
+
+current_io_0_2 = False
+current_position_set_2 = False
 
 image_shape_define = False
 
@@ -61,134 +70,301 @@ Whenever ur3/gripper_input publishes info this callback function is called.
 """
 def input_callback(msg):
 
-    global digital_in_0
-    digital_in_0 = msg.DIGIN
-    digital_in_0 = digital_in_0 & 1 # Only look at least significant bit, meaning index 0
+    global digital_in_0_1
+    digital_in_0_1 = msg.DIGIN_1
+    digital_in_0_1 = digital_in_0_1 & 1 # Only look at least significant bit, meaning index 0
 
+def input_callback_2(msg):
 
+    global digital_in_0_2
+    digital_in_0_2 = msg.DIGIN_2
+    digital_in_0_2 = digital_in_0_2 & 1 # Only look at least significant bit, meaning index 0
 """
 Whenever ur3/position publishes info, this callback function is called.
 """
 def position_callback(msg):
 
-    global thetas
-    global current_position
-    global current_position_set
+    global thetas_1
+    global current_position_1
+    global current_position_set_1
 
-    thetas[0] = msg.position[0]
-    thetas[1] = msg.position[1]
-    thetas[2] = msg.position[2]
-    thetas[3] = msg.position[3]
-    thetas[4] = msg.position[4]
-    thetas[5] = msg.position[5]
+    thetas_1[0] = msg.position_1[0]
+    thetas_1[1] = msg.position_1[1]
+    thetas_1[2] = msg.position_1[2]
+    thetas_1[3] = msg.position_1[3]
+    thetas_1[4] = msg.position_1[4]
+    thetas_1[5] = msg.position_1[5]
 
-    current_position[0] = thetas[0]
-    current_position[1] = thetas[1]
-    current_position[2] = thetas[2]
-    current_position[3] = thetas[3]
-    current_position[4] = thetas[4]
-    current_position[5] = thetas[5]
+    current_position_1[0] = thetas_1[0]
+    current_position_1[1] = thetas_1[1]
+    current_position_1[2] = thetas_1[2]
+    current_position_1[3] = thetas_1[3]
+    current_position_1[4] = thetas_1[4]
+    current_position_1[5] = thetas_1[5]
 
-    current_position_set = True
+    current_position_set_1 = True
 
 
+def position_callback_2(msg):
+
+    global thetas_2
+    global current_position_2
+    global current_position_set_2
+
+    thetas_2[0] = msg.position_2[0]
+    thetas_2[1] = msg.position_2[1]
+    thetas_2[2] = msg.position_2[2]
+    thetas_2[3] = msg.position_2[3]
+    thetas_2[4] = msg.position_2[4]
+    thetas_2[5] = msg.position_2[5]
+
+    current_position_2[0] = thetas_2[0]
+    current_position_2[1] = thetas_2[1]
+    current_position_2[2] = thetas_2[2]
+    current_position_2[3] = thetas_2[3]
+    current_position_2[4] = thetas_2[4]
+    current_position_2[5] = thetas_2[5]
+
+    current_position_set_2 = True
 """
 Function to control the suction cup on/off
 """
-def gripper(pub_cmd, loop_rate, io_0):
+def gripper(pub_cmd, loop_rate, io_0,pos):
 
     global SPIN_RATE
-    global thetas
-    global current_io_0
-    global current_position
+    global thetas_1
+    global current_io_0_1
+    global current_position_1
 
     error = 0
     spin_count = 0
     at_goal = 0
 
-    current_io_0 = io_0
+    current_io_0_1 = io_0
 
-    driver_msg = command()
-    driver_msg.destination = current_position
-    driver_msg.v = 1.0
-    driver_msg.a = 1.0
-    driver_msg.io_0 = io_0
+    driver_msg = robot1_command()
+    driver_msg.destination_1 = pos
+    driver_msg.v_1 = 1.0
+    driver_msg.a_1 = 1.0
+    driver_msg.io_0_1 = io_0
     pub_cmd.publish(driver_msg)
+    loop_rate.sleep()
+    # while(at_goal == 0):
 
-    while(at_goal == 0):
+    #     if( abs(thetas_1[0]-driver_msg.destination_1[0]) < 0.0005 and \
+    #         abs(thetas_1[1]-driver_msg.destination_1[1]) < 0.0005 and \
+    #         abs(thetas_1[2]-driver_msg.destination_1[2]) < 0.0005 and \
+    #         abs(thetas_1[3]-driver_msg.destination_1[3]) < 0.0005 and \
+    #         abs(thetas_1[4]-driver_msg.destination_1[4]) < 0.0005 and \
+    #         abs(thetas_1[5]-driver_msg.destination_1[5]) < 0.0005 ):
 
-        if( abs(thetas[0]-driver_msg.destination[0]) < 0.0005 and \
-            abs(thetas[1]-driver_msg.destination[1]) < 0.0005 and \
-            abs(thetas[2]-driver_msg.destination[2]) < 0.0005 and \
-            abs(thetas[3]-driver_msg.destination[3]) < 0.0005 and \
-            abs(thetas[4]-driver_msg.destination[4]) < 0.0005 and \
-            abs(thetas[5]-driver_msg.destination[5]) < 0.0005 ):
+    #         #rospy.loginfo("Goal is reached!")
+    #         at_goal = 1
 
-            #rospy.loginfo("Goal is reached!")
-            at_goal = 1
+    #     loop_rate.sleep()
 
-        loop_rate.sleep()
+    #     if(spin_count >  SPIN_RATE*5):
 
-        if(spin_count >  SPIN_RATE*5):
+    #         pub_cmd.publish(driver_msg)
+    #         rospy.loginfo("Just published again driver_msg")
+    #         spin_count = 0
 
-            pub_cmd.publish(driver_msg)
-            rospy.loginfo("Just published again driver_msg")
-            spin_count = 0
-
-        spin_count = spin_count + 1
+    #     spin_count = spin_count + 1
 
     return error
 
+"""
+Function to control the suction cup on/off
+"""
+def gripper_2(pub_cmd, loop_rate, io_0, pos):
+
+    global SPIN_RATE
+    global thetas_2
+    global current_io_0_2
+    global current_position_2
+
+    error = 0
+    spin_count = 0
+    at_goal = 0
+
+    current_io_0_2 = io_0
+
+    driver_msg = robot2_command()
+    driver_msg.destination_2 = pos
+    driver_msg.v_2 = 1.0
+    driver_msg.a_2 = 1.0
+    driver_msg.io_0_2 = io_0
+    pub_cmd.publish(driver_msg)
+    loop_rate.sleep()
+    # while(at_goal == 0):
+
+    #     if( abs(thetas_2[0]-driver_msg.destination_2[0]) < 0.0005 and \
+    #         abs(thetas_2[1]-driver_msg.destination_2[1]) < 0.0005 and \
+    #         abs(thetas_2[2]-driver_msg.destination_2[2]) < 0.0005 and \
+    #         abs(thetas_2[3]-driver_msg.destination_2[3]) < 0.0005 and \
+    #         abs(thetas_2[4]-driver_msg.destination_2[4]) < 0.0005 and \
+    #         abs(thetas_2[5]-driver_msg.destination_2[5]) < 0.0005 ):
+
+    #         #rospy.loginfo("Goal is reached!")
+    #         at_goal = 1
+
+    #     loop_rate.sleep()
+
+    #     if(spin_count >  SPIN_RATE*5):
+
+    #         pub_cmd.publish(driver_msg)
+    #         rospy.loginfo("Just published again driver_msg")
+    #         spin_count = 0
+
+    #     spin_count = spin_count + 1
+
+    return error
 
 """
 Move robot arm from one position to another
 """
 def move_arm(pub_cmd, loop_rate, dest, vel, accel):
 
-    global thetas
+    global thetas_1
     global SPIN_RATE
 
     error = 0
     spin_count = 0
     at_goal = 0
 
-    driver_msg = command()
-    driver_msg.destination = dest
-    driver_msg.v = vel
-    driver_msg.a = accel
-    driver_msg.io_0 = current_io_0
+    driver_msg = robot1_command()
+    driver_msg.destination_1 = dest
+    driver_msg.v_1 = vel
+    driver_msg.a_1 = accel
+    driver_msg.io_0_1 = current_io_0_1
     pub_cmd.publish(driver_msg)
 
     loop_rate.sleep()
 
-    while(at_goal == 0):
+    # while(at_goal == 0):
 
-        if( abs(thetas[0]-driver_msg.destination[0]) < 0.0005 and \
-            abs(thetas[1]-driver_msg.destination[1]) < 0.0005 and \
-            abs(thetas[2]-driver_msg.destination[2]) < 0.0005 and \
-            abs(thetas[3]-driver_msg.destination[3]) < 0.0005 and \
-            abs(thetas[4]-driver_msg.destination[4]) < 0.0005 and \
-            abs(thetas[5]-driver_msg.destination[5]) < 0.0005 ):
+    #     if( abs(thetas_1[0]-driver_msg.destination_1[0]) < 0.0005 and \
+    #         abs(thetas_1[1]-driver_msg.destination_1[1]) < 0.0005 and \
+    #         abs(thetas_1[2]-driver_msg.destination_1[2]) < 0.0005 and \
+    #         abs(thetas_1[3]-driver_msg.destination_1[3]) < 0.0005 and \
+    #         abs(thetas_1[4]-driver_msg.destination_1[4]) < 0.0005 and \
+    #         abs(thetas_1[5]-driver_msg.destination_1[5]) < 0.0005 ):
 
-            at_goal = 1
-            #rospy.loginfo("Goal is reached!")
+    #         at_goal = 1
+    #         #rospy.loginfo("Goal is reached!")
 
-        loop_rate.sleep()
+    #     loop_rate.sleep()
 
-        if(spin_count >  SPIN_RATE*5):
+    #     if(spin_count >  SPIN_RATE*5):
 
-            pub_cmd.publish(driver_msg)
-            rospy.loginfo("Just published again driver_msg")
-            spin_count = 0
+    #         pub_cmd.publish(driver_msg)
+    #         rospy.loginfo("Just published again driver_msg")
+    #         spin_count = 0
 
-        spin_count = spin_count + 1
+    #     spin_count = spin_count + 1
 
     return error
 
+
+
+"""
+Move robot arm from one position to another
+"""
+def move_arm_2(pub_cmd, loop_rate, dest, vel, accel):
+
+    global thetas_1
+    global SPIN_RATE
+
+    error = 0
+    spin_count = 0
+    at_goal = 0
+
+    driver_msg = robot2_command()
+    driver_msg.destination_2 = dest
+    driver_msg.v_2 = vel
+    driver_msg.a_2 = accel
+    driver_msg.io_0_2 = current_io_0_2
+    pub_cmd.publish(driver_msg)
+
+    loop_rate.sleep()
+
+    # while(at_goal == 0):
+
+    #     if( abs(thetas_2[0]-driver_msg.destination_2[0]) < 0.0005 and \
+    #         abs(thetas_2[1]-driver_msg.destination_2[1]) < 0.0005 and \
+    #         abs(thetas_2[2]-driver_msg.destination_2[2]) < 0.0005 and \
+    #         abs(thetas_2[3]-driver_msg.destination_2[3]) < 0.0005 and \
+    #         abs(thetas_2[4]-driver_msg.destination_2[4]) < 0.0005 and \
+    #         abs(thetas_2[5]-driver_msg.destination_2[5]) < 0.0005 ):
+
+    #         at_goal = 1
+    #         #rospy.loginfo("Goal is reached!")
+
+    #     loop_rate.sleep()
+
+    #     if(spin_count >  SPIN_RATE*5):
+
+    #         pub_cmd.publish(driver_msg)
+    #         rospy.loginfo("Just published again driver_msg")
+    #         spin_count = 0
+
+    #     spin_count = spin_count + 1
+
+    return error
 ################ Pre-defined parameters and functions no need to change above ################
 
+def move_block_2(pub_cmd, loop_rate, start_xw_yw_zw, second_angle, middle_angle,target_xw_yw_zw, vel, accel):
 
-def move_block(pub_cmd, loop_rate, start_xw_yw_zw, target_xw_yw_zw, vel, accel):
+    """
+    start_xw_yw_zw: where to pick up a block in global coordinates
+    target_xw_yw_zw: where to place the block in global coordinates
+
+    hint: you will use lab_invk(), gripper(), move_arm() functions to
+    pick and place a block
+
+    """
+    # ========================= Student's code starts here =========================
+
+    # global variable1
+    # global variable2
+    # global variable1
+    # global variable2
+    error = 0
+
+    rospy.loginfo("Finding the block...")
+    # move the arm to grip the block
+    time.sleep(2)
+    move_arm_2(pub_cmd, loop_rate, start_xw_yw_zw, 3.0, 3.0)
+    time.sleep(2)
+    gripper_2(pub_cmd,loop_rate,suction_on,start_xw_yw_zw)
+    time.sleep(2)
+    # if not digital_in_0_1:
+    #     error = 1
+    #     gripper_2(pub_cmd,loop_rate,suction_off,start_xw_yw_zw)
+    #     rospy.loginfo("Fail to grip the block")
+    #     return error
+    #add in lab5
+    time.sleep(2)
+    move_arm_2(pub_cmd, loop_rate, second_angle, 3.0, 3.0)
+    time.sleep(2)
+
+    move_arm_2(pub_cmd, loop_rate, middle_angle, 3.0, 3.0)
+    time.sleep(2)
+    
+    rospy.loginfo("Moving to the current destination...")
+    #move_arm(pub_cmd,loop_rate,midposition,4.0,4.0)
+    # move the are to the destination
+    move_arm_2(pub_cmd,loop_rate,target_xw_yw_zw,1.0,1.0)
+    time.sleep(2.0)
+    gripper_2(pub_cmd,loop_rate,suction_off,target_xw_yw_zw)
+    time.sleep(1.0)
+
+    # ========================= Student's code ends here ===========================
+
+    return error
+
+
+def move_block(pub_cmd, loop_rate, start_xw_yw_zw, second_angle, middle_angle,target_xw_yw_zw, vel, accel):
 
     """
     start_xw_yw_zw: where to pick up a block in global coordinates
@@ -206,23 +382,30 @@ def move_block(pub_cmd, loop_rate, start_xw_yw_zw, target_xw_yw_zw, vel, accel):
 
     rospy.loginfo("Finding the block...")
     # move the arm to grip the block
-    move_arm(pub_cmd, loop_rate, start_xw_yw_zw, 4.0, 4.0)
-    time.sleep(0.5)
-    gripper(pub_cmd,loop_rate,suction_on)
-    time.sleep(1.0)
-    if not digital_in_0:
-        error = 1
-        gripper(pub_cmd,loop_rate,suction_off)
-        rospy.loginfo("Fail to grip the block")
-        return error
+    time.sleep(2)
+    move_arm(pub_cmd, loop_rate, start_xw_yw_zw, 3.0, 3.0)
+    time.sleep(2)
+    gripper(pub_cmd,loop_rate,suction_on,start_xw_yw_zw)
+    time.sleep(2)
+    # if not digital_in_0_1:
+    #     error = 1
+    #     gripper(pub_cmd,loop_rate,suction_off,start_xw_yw_zw)
+    #     rospy.loginfo("Fail to grip the block")
+    #     return error
     #add in lab5
-    move_arm(pub_cmd, loop_rate, mid_angle, 4.0, 4.0)
+    time.sleep(2)
+    move_arm(pub_cmd, loop_rate, second_angle, 3.0, 3.0)
+    time.sleep(2)
+
+    move_arm(pub_cmd, loop_rate, middle_angle, 3.0, 3.0)
+    time.sleep(2)
+    
     rospy.loginfo("Moving to the current destination...")
     #move_arm(pub_cmd,loop_rate,midposition,4.0,4.0)
     # move the are to the destination
-    move_arm(pub_cmd,loop_rate,target_xw_yw_zw,4.0,4.0)
-    time.sleep(0.5)
-    gripper(pub_cmd,loop_rate,suction_off)
+    move_arm(pub_cmd,loop_rate,target_xw_yw_zw,1.0,1.0)
+    time.sleep(2.0)
+    gripper(pub_cmd,loop_rate,suction_off,target_xw_yw_zw)
     time.sleep(1.0)
 
     # ========================= Student's code ends here ===========================
@@ -274,6 +457,50 @@ class ImageConverter:
         xw_yw_target_Blue = blob_search(cv_image, "blue")
 
 
+def moving_triangle(pub_command, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur):
+    x_tri = xw_yw_target_Blue_cur[0][0]
+    y_tri = xw_yw_target_Blue_cur[0][1]
+    L = 0.06
+    Q = [(x_tri-L*0.866,y_tri-L*0.5),
+         (x_tri+L*0.866,y_tri-L*0.5),
+         (x_tri,y_tri+L)]
+    
+    move_arm(pub_command, loop_rate, mid_angle, 4.0, 4.0)
+    time.sleep(2)
+    rospy.loginfo("Moving first block")
+    print("xw_yw_G is : \n")
+    print(xw_yw_G)
+    start_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.030,0)
+    second_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.2,0)
+    dest_angle = lab_invk(Q[0][0],Q[0][1],0.072,0)
+    middle_angle = lab_invk(Q[0][0],Q[0][1],0.15,0)
+    move_block(pub_command,loop_rate,start_angle,second_angle, middle_angle,dest_angle,3,1)
+    time.sleep(1)
+    gripper(pub_command,loop_rate,suction_off,dest_angle)
+
+    rospy.loginfo("Moving second block")
+    print("xw_yw_G is : \n")
+    print(xw_yw_G)
+    start_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.030,0)
+    second_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.2,0)
+    dest_angle = lab_invk(Q[1][0],Q[1][1],0.072,0)
+    middle_angle = lab_invk(Q[1][0],Q[1][1],0.15,0)
+    move_block(pub_command,loop_rate,start_angle,second_angle,middle_angle,dest_angle,3,1)
+    time.sleep(1)
+    gripper(pub_command,loop_rate,suction_off,dest_angle)
+
+    rospy.loginfo("Moving third block")
+    print("xw_yw_G is : \n")
+    print(xw_yw_G)
+    start_angle = lab_invk(xw_yw_G_cur[2][0],xw_yw_G_cur[2][1],0.030,0)
+    second_angle = lab_invk(xw_yw_G_cur[2][0],xw_yw_G_cur[2][1],0.2,0)
+    dest_angle = lab_invk(Q[2][0],Q[2][1],0.072,0)
+    middle_angle = lab_invk(Q[2][0],Q[2][1],0.15,0)
+    move_block(pub_command,loop_rate,start_angle,second_angle,middle_angle,dest_angle,3,1)
+    time.sleep(1)
+    gripper(pub_command,loop_rate,suction_off,dest_angle)
+
+
 """
 Program run from here
 """
@@ -292,12 +519,15 @@ def main():
     rospy.init_node('lab5node')
 
     # Initialize publisher for ur3/command with buffer size of 10
-    pub_command = rospy.Publisher('ur3/command', command, queue_size=10)
-
+    pub_command = rospy.Publisher('ur3_0/command', robot1_command, queue_size=10)
+    pub_command_2 = rospy.Publisher('ur3_1/command', robot2_command, queue_size=10)
     # Initialize subscriber to ur3/position & ur3/gripper_input and callback fuction
     # each time data is published
-    sub_position = rospy.Subscriber('ur3/position', position, position_callback)
-    sub_input = rospy.Subscriber('ur3/gripper_input', gripper_input, input_callback)
+    sub_position = rospy.Subscriber('ur3/position', robot1_position, position_callback)
+    sub_position_2 = rospy.Subscriber('ur3/position_1', robot2_position, position_callback_2)
+
+    sub_input = rospy.Subscriber('ur3/gripper_input', robot1_gripper_input, input_callback)
+    sub_input_2 = rospy.Subscriber('ur3/gripper_input_1', robot2_gripper_input, input_callback_2)
 
     # Check if ROS is ready for operation
     while(rospy.is_shutdown()):
@@ -308,7 +538,26 @@ def main():
 
     vel = 4.0
     accel = 4.0
-    move_arm(pub_command, loop_rate, go_away, vel, accel)
+
+    
+    
+
+    # move_block_2(pub_command_2, loop_rate,go_away,go_down,go_away,go_down,vel,accel)
+    # time.sleep(2)
+    # move_arm_2(pub_command_2, loop_rate, go_away, vel, accel)
+    # time.sleep(2)
+    # move_arm_2(pub_command_2, loop_rate, go_down, vel, accel)
+    # time.sleep(2)
+    # move_arm(pub_command, loop_rate, home, vel, accel)
+    # time.sleep(2)
+    # move_arm(pub_command, loop_rate, go_down, vel, accel)
+    
+
+    
+    
+
+    
+    
 
     ic = ImageConverter(SPIN_RATE)
     time.sleep(5)
@@ -323,8 +572,8 @@ def main():
     """
     print("xw_yw_G is : \n")
     print(xw_yw_G)
-    print("xw_yw_Y is : \n")
-    print(xw_yw_Y)
+    print("xw_yw_target_Blue is : \n")
+    print(xw_yw_target_Blue)
     # print(xw_yw_G[0])
     # print(xw_yw_G[1])
     # print(xw_yw_G[2])
@@ -334,10 +583,11 @@ def main():
     start_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
     mid_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0]
     dest_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
+    satety_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0]
     i = 0
     start_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.030,0)
-    mid_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.1,0)
-    
+    mid_angle = lab_invk(xw_yw_target_Blue[0][0],xw_yw_target_Blue[0][0],0.2,0)
+   
     while len(xw_yw_target_Blue) == 0:
         i = i +1
         print("lenght of xw_yw_target_Blue is:\n")
@@ -374,13 +624,39 @@ def main():
         # print(len(xw_yw_target_Blue))
         # print(xw_yw_target_Blue)
         # print("\n")
-        move_arm(pub_command, loop_rate, mid_angle, vel, accel)
-        dest_angle = lab_invk(xw_yw_target_Blue_cur[0][0],xw_yw_target_Blue_cur[0][1],0.10,0)
-        if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
-            gripper(pub_command,loop_rate,suction_off)
-            rospy.loginfo("error, arm is halt")
-            return 1
-    
+        # move_arm(pub_command, loop_rate, mid_angle, vel, accel)
+        # dest_angle = lab_invk(xw_yw_target_Blue_cur[0][0],xw_yw_target_Blue_cur[0][1],0.076,0)
+        # if move_block(pub_command,loop_rate,start_angle,dest_angle,3,1):
+        #     time.sleep(10)
+        #     gripper(pub_command,loop_rate,suction_off)
+        #     rospy.loginfo("error, arm is halt")
+        #     rospy.spin()
+        #     return 1
+
+        # move_arm(pub_command, loop_rate, mid_angle, vel, accel)
+        moving_triangle(pub_command, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur)
+        # dest_angle = lab_invk(xw_yw_target_Blue_cur[0][0],xw_yw_target_Blue_cur[0][1],0.076,0)
+        # move_block(pub_command,loop_rate,start_angle,dest_angle,3,1)
+        # time.sleep(10)
+        # gripper(pub_command,loop_rate,suction_off)
+
+        # rospy.loginfo("Moving second block")
+        # print("xw_yw_G is : \n")
+        # print(xw_yw_G)
+        # start_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.030,0)
+        # # dest_angle = lab_invk(xw_yw_target_Blue_cur[0][0],xw_yw_target_Blue_cur[0][1],0.076,0)
+        # move_block(pub_command,loop_rate,start_angle,dest_angle,3,1)
+        # time.sleep(10)
+        # gripper(pub_command,loop_rate,suction_off)
+
+        # rospy.loginfo("Moving third block")
+        # print("xw_yw_G is : \n")
+        # print(xw_yw_G)
+        # start_angle = lab_invk(xw_yw_G_cur[2][0],xw_yw_G_cur[2][1],0.030,0)
+        # # dest_angle = lab_invk(xw_yw_target_Blue_cur[0][0],xw_yw_target_Blue_cur[0][1],0.076,0)
+        # move_block(pub_command,loop_rate,start_angle,dest_angle,3,1)
+        # time.sleep(10)
+        # gripper(pub_command,loop_rate,suction_off)
     # start_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.033,0)
     # mid_angle = lab_invk(xw_yw_G_cur[1][0],xw_yw_G_cur[1][1],0.05,0)
     # dest_angle = lab_invk(destination_G[0][0],destination_G[0][1],0.08,0)

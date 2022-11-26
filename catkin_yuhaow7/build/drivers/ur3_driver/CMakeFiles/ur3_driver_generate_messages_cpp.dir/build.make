@@ -53,16 +53,22 @@ CMAKE_BINARY_DIR = /home/ur3/catkin_yuhaow7/build
 # Include the progress variables for this target.
 include drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp.dir/progress.make
 
-drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_position.h
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/position.h
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_position.h
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_command.h
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_gripper_input.h
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_gripper_input.h
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_command.h
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/gripper_input.h
 
 
-/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg
-/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from ur3_driver/command.msg"
-	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_position.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_position.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_position.msg
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_position.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from ur3_driver/robot1_position.msg"
+	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/position.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/position.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/position.msg
@@ -70,15 +76,57 @@ drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp: /home/ur3/catkin
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from ur3_driver/position.msg"
 	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
 
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_position.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_position.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_position.msg
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_position.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from ur3_driver/robot2_position.msg"
+	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_command.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_command.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_command.msg
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_command.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from ur3_driver/robot1_command.msg"
+	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from ur3_driver/command.msg"
+	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_gripper_input.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_gripper_input.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_gripper_input.msg
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_gripper_input.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from ur3_driver/robot1_gripper_input.msg"
+	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_gripper_input.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_gripper_input.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_gripper_input.msg
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_gripper_input.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from ur3_driver/robot2_gripper_input.msg"
+	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_command.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_command.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg
+/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_command.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from ur3_driver/robot2_command.msg"
+	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
+
 /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/gripper_input.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/gripper_input.h: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg
 /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/gripper_input.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from ur3_driver/gripper_input.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from ur3_driver/gripper_input.msg"
 	cd /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver && /home/ur3/catkin_yuhaow7/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/include/ur3_driver -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 ur3_driver_generate_messages_cpp: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp
-ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h
+ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_position.h
 ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/position.h
+ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_position.h
+ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_command.h
+ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h
+ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_gripper_input.h
+ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_gripper_input.h
+ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_command.h
 ur3_driver_generate_messages_cpp: /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/gripper_input.h
 ur3_driver_generate_messages_cpp: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp.dir/build.make
 

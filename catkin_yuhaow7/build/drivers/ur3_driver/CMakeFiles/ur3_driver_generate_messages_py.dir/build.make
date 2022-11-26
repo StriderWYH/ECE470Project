@@ -53,37 +53,85 @@ CMAKE_BINARY_DIR = /home/ur3/catkin_yuhaow7/build
 # Include the progress variables for this target.
 include drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py.dir/progress.make
 
-drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_position.py
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_position.py
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_position.py
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_command.py
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_gripper_input.py
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_gripper_input.py
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_command.py
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_gripper_input.py
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py
 
 
-/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG ur3_driver/command"
-	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_position.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_position.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_position.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG ur3_driver/robot1_position"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
 
 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_position.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_position.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/position.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG ur3_driver/position"
 	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
 
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_position.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_position.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_position.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG ur3_driver/robot2_position"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_command.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_command.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_command.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG ur3_driver/robot1_command"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG ur3_driver/command"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_gripper_input.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_gripper_input.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_gripper_input.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG ur3_driver/robot1_gripper_input"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot1_gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_gripper_input.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_gripper_input.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_gripper_input.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG ur3_driver/robot2_gripper_input"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
+
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_command.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_command.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG ur3_driver/robot2_command"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
+
 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_gripper_input.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_gripper_input.py: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG ur3_driver/gripper_input"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG ur3_driver/gripper_input"
 	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg
 
 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_position.py
 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_position.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_position.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_command.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_gripper_input.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_gripper_input.py
+/home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_command.py
 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_gripper_input.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for ur3_driver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python msg __init__.py for ur3_driver"
 	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg --initpy
 
 ur3_driver_generate_messages_py: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py
-ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py
+ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_position.py
 ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_position.py
+ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_position.py
+ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_command.py
+ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_command.py
+ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot1_gripper_input.py
+ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_gripper_input.py
+ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_command.py
 ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_gripper_input.py
 ur3_driver_generate_messages_py: /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/__init__.py
 ur3_driver_generate_messages_py: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_py.dir/build.make
