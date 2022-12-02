@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/command.lisp"
   "/home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/robot1_gripper_input.lisp"
   "/home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/robot2_gripper_input.lisp"
+  "/home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/robot_position.lisp"
   "/home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/robot2_command.lisp"
   "/home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/gripper_input.lisp"
 )

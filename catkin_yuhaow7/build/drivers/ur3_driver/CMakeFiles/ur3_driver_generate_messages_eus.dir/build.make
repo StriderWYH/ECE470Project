@@ -60,6 +60,7 @@ drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus: /home/ur3/catkin
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/command.l
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot1_gripper_input.l
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_gripper_input.l
+drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot_position.l
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_command.l
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/gripper_input.l
 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/manifest.l
@@ -100,18 +101,23 @@ drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus: /home/ur3/catkin
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp code from ur3_driver/robot2_gripper_input.msg"
 	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg
 
+/home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot_position.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot_position.l: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot_position.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating EusLisp code from ur3_driver/robot_position.msg"
+	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot_position.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg
+
 /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_command.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_command.l: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating EusLisp code from ur3_driver/robot2_command.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating EusLisp code from ur3_driver/robot2_command.msg"
 	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/robot2_command.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg
 
 /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/gripper_input.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/gripper_input.l: /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating EusLisp code from ur3_driver/gripper_input.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating EusLisp code from ur3_driver/gripper_input.msg"
 	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg/gripper_input.msg -Iur3_driver:/home/ur3/catkin_yuhaow7/src/drivers/ur3_driver/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ur3_driver -o /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg
 
 /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating EusLisp manifest code for ur3_driver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ur3/catkin_yuhaow7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating EusLisp manifest code for ur3_driver"
 	cd /home/ur3/catkin_yuhaow7/build/drivers/ur3_driver && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver ur3_driver std_msgs
 
 ur3_driver_generate_messages_eus: drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus
@@ -122,6 +128,7 @@ ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ro
 ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/command.l
 ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot1_gripper_input.l
 ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_gripper_input.l
+ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot_position.l
 ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_command.l
 ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/gripper_input.l
 ur3_driver_generate_messages_eus: /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/manifest.l

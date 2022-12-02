@@ -186,7 +186,7 @@ def gripper_2(pub_cmd, loop_rate, io_0, pos):
     error = 0
     spin_count = 0
     at_goal = 0
-
+   
     current_io_0_2 = io_0
 
     driver_msg = robot2_command()
@@ -501,6 +501,25 @@ def moving_triangle(pub_command, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur):
     gripper(pub_command,loop_rate,suction_off,dest_angle)
 
 
+
+def moving_two_arms(pub_command,pub_command_2, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur):
+    start_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.030,0)
+    second_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.2,0)
+    dest_angle = lab_invk(0.15,0.5,0.03,0)
+    middle_angle = lab_invk(0.15,0.5,0.15,0)
+    move_block(pub_command,loop_rate,start_angle,second_angle, middle_angle,dest_angle,3,1)
+    time.sleep(1)
+    gripper(pub_command,loop_rate,suction_off,dest_angle)
+    time.sleep(1)
+
+    move_arm(pub_command,loop_rate,go_away,3,1)
+    start_angle_2 = lab_invk(0.15,0.5-0.8,0.03,0)
+    second_angle_2 = lab_invk(0.15,0.5-0.8,0.15,0)
+    dest_angle_2 = lab_invk(0.2,0.2,0.03,0)
+    middle_angle_2 = lab_invk(0.2,0.2,0.15,0)
+    move_block_2(pub_command_2,loop_rate,start_angle_2,second_angle_2, middle_angle_2,dest_angle_2,3,1)
+    time.sleep(1)
+    gripper_2(pub_command_2,loop_rate,suction_off,dest_angle_2)
 """
 Program run from here
 """
@@ -523,11 +542,11 @@ def main():
     pub_command_2 = rospy.Publisher('ur3_1/command', robot2_command, queue_size=10)
     # Initialize subscriber to ur3/position & ur3/gripper_input and callback fuction
     # each time data is published
-    sub_position = rospy.Subscriber('ur3/position', robot1_position, position_callback)
-    sub_position_2 = rospy.Subscriber('ur3/position_1', robot2_position, position_callback_2)
+    sub_position = rospy.Subscriber('ur3_0/position', robot1_position, position_callback)
+    sub_position_2 = rospy.Subscriber('ur3_1/position', robot2_position, position_callback_2)
 
-    sub_input = rospy.Subscriber('ur3/gripper_input', robot1_gripper_input, input_callback)
-    sub_input_2 = rospy.Subscriber('ur3/gripper_input_1', robot2_gripper_input, input_callback_2)
+    sub_input = rospy.Subscriber('ur3_0/gripper_input', robot1_gripper_input, input_callback)
+    sub_input_2 = rospy.Subscriber('ur3_1/gripper_input', robot2_gripper_input, input_callback_2)
 
     # Check if ROS is ready for operation
     while(rospy.is_shutdown()):
@@ -545,13 +564,19 @@ def main():
     # move_block_2(pub_command_2, loop_rate,go_away,go_down,go_away,go_down,vel,accel)
     # time.sleep(2)
     # move_arm_2(pub_command_2, loop_rate, go_away, vel, accel)
-    # time.sleep(2)
-    # move_arm_2(pub_command_2, loop_rate, go_down, vel, accel)
+    
     # time.sleep(2)
     # move_arm(pub_command, loop_rate, home, vel, accel)
-    # time.sleep(2)
-    # move_arm(pub_command, loop_rate, go_down, vel, accel)
+
+
+
+
+    time.sleep(2)
+    move_arm(pub_command, loop_rate, go_away, vel, accel)
     
+
+    time.sleep(2)
+    move_arm_2(pub_command_2, loop_rate, go_down, vel, accel)
 
     
     
@@ -632,9 +657,9 @@ def main():
         #     rospy.loginfo("error, arm is halt")
         #     rospy.spin()
         #     return 1
-
+        moving_two_arms(pub_command,pub_command_2, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur)
         # move_arm(pub_command, loop_rate, mid_angle, vel, accel)
-        moving_triangle(pub_command, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur)
+        # moving_triangle(pub_command, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur)
         # dest_angle = lab_invk(xw_yw_target_Blue_cur[0][0],xw_yw_target_Blue_cur[0][1],0.076,0)
         # move_block(pub_command,loop_rate,start_angle,dest_angle,3,1)
         # time.sleep(10)

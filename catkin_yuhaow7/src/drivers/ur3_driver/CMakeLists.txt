@@ -64,6 +64,7 @@ add_message_files(
   robot2_position.msg
   robot1_gripper_input.msg
   robot2_gripper_input.msg
+  robot_position.msg
 )
 
 ## Generate services in the 'srv' folder

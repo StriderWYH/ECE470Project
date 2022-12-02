@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/command.js"
   "/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot1_gripper_input.js"
   "/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_gripper_input.js"
+  "/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot_position.js"
   "/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_command.js"
   "/home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/gripper_input.js"
 )

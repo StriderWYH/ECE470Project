@@ -53,6 +53,7 @@ c91f3e0cffc76f708e1e013d4871684c /home/ur3/catkin_yuhaow7/devel/include/ur3_driv
 40a2f0d28a1e24717fc68974a8c0cf11 /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_command.h
 c425f7d9f0e6d92612d41884032a50dd /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_gripper_input.h
 5d82b6650da8645ef2d0303c34f8735f /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_position.h
+216a3166a005833f252f33888abe6007 /home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot_position.h
 e5f21bf94fc9a42c5162efa6ceecabe5 /home/ur3/catkin_yuhaow7/devel/include/ur_driver/URDriverConfig.h
 3d05a4a79030ae7945f9a5064dd7907c /home/ur3/catkin_yuhaow7/devel/include/ur_msgs/Analog.h
 c0db331f396f3f16200b00ae6e1434a6 /home/ur3/catkin_yuhaow7/devel/include/ur_msgs/Digital.h
@@ -108,6 +109,7 @@ a778466572a612206063431957d13169 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/di
 0dcf027b328946e0fbde122e0b208c7f /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_command.py
 74dd154c04e1da59adad1ca2073e5656 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_gripper_input.py
 e367b595404fd2cea7b716a2bc2fa9e3 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot2_position.py
+46702158d7e4937ac035001fd617c60c /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur3_driver/msg/_robot_position.py
 0679b644489ab226a9c998678a54ecba /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur_msgs/msg/_Analog.py
 2f30ee6ad1ac9e36e0a739daeda3b096 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur_msgs/msg/_Digital.py
 46d52133795d235b9e5abf7a669ea800 /home/ur3/catkin_yuhaow7/devel/lib/python2.7/dist-packages/ur_msgs/msg/_IOStates.py
@@ -161,6 +163,7 @@ ce467c4478fde8d7674142e99596ea44 /home/ur3/catkin_yuhaow7/devel/share/common-lis
 8808a79244b9cf68a96f92bb2eea98f7 /home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/robot2_command.lisp
 86adf4594573893887aef7d1ce3a40df /home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/robot2_gripper_input.lisp
 3b5d6d3899b2f01ce360bf066b1b507f /home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/robot2_position.lisp
+f81cc027c743739affff4a4a50ad30f2 /home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur3_driver/msg/robot_position.lisp
 2d9a16ac4ed84c4add5d0e381bc80ea3 /home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur_msgs/msg/Analog.lisp
 66c1e184a9fc1da05b1f061eaa973845 /home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur_msgs/msg/Digital.lisp
 294fc2fd61c941f8edada8353497c62a /home/ur3/catkin_yuhaow7/devel/share/common-lisp/ros/ur_msgs/msg/IOStates.lisp
@@ -212,6 +215,7 @@ fc144f05d7c1652c90dae124cd894624 /home/ur3/catkin_yuhaow7/devel/share/gennodejs/
 3983a550a761f48465580ed067275a2f /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_command.js
 96088dc6fa530305dfc54e6f48fd977d /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_gripper_input.js
 9765aa874a09bf71e9f31cd8d777f5bc /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot2_position.js
+9d244d38ca5a33963160eab94d0b8b3e /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur3_driver/msg/robot_position.js
 3d49608ac758ff578bd13c51085a069d /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur_msgs/msg/Analog.js
 ba4c2316f5c31269951d541677f5bcbe /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur_msgs/msg/Digital.js
 307bc4678506b80d120a6f430a56b099 /home/ur3/catkin_yuhaow7/devel/share/gennodejs/ros/ur_msgs/msg/IOStates.js
@@ -265,6 +269,7 @@ c6fa9269656b9eba1da8085f98cd8632 /home/ur3/catkin_yuhaow7/devel/share/roseus/ros
 6b704978784e4e3887fe2c8280224843 /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_command.l
 d47b71de187be039221405af7ff1282f /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_gripper_input.l
 3179f8ce93b8ca22627892c26c89f99e /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_position.l
+024a788fe4ed96cd0c7fda5ab011a546 /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot_position.l
 271da18b425294d7c645b1921430e757 /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur_msgs/manifest.l
 0500ea00b639df0ca6140eca8e1b6c2b /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur_msgs/msg/Analog.l
 540080fd6e8bcd9d749e2be87324f66b /home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur_msgs/msg/Digital.l
@@ -381,6 +386,7 @@ f0bdd44a32c56e19d70260901f509b91 drivers/ur3_driver/CMakeFiles/_ur3_driver_gener
 c8d48f3c2fe3b5cd672a65854f37150f drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_command
 4dfebf8b431b19229046eed5cc57c4d8 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_gripper_input
 c94ec9b0daf46fe153830027a44466bd drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot2_position
+9dcf08f9e4ccd758fa6f6820ac301aa0 drivers/ur3_driver/CMakeFiles/_ur3_driver_generate_messages_check_deps_robot_position
 10d08a53ec9c787654cbf3f2124d5f87 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_cpp
 10d08a53ec9c787654cbf3f2124d5f87 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_eus
 10d08a53ec9c787654cbf3f2124d5f87 drivers/ur3_driver/CMakeFiles/ur3_driver_generate_messages_lisp

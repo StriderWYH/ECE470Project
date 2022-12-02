@@ -15,6 +15,7 @@ from ur3_driver.msg import robot1_position
 from ur3_driver.msg import robot2_position
 from ur3_driver.msg import robot1_gripper_input
 from ur3_driver.msg import robot2_gripper_input
+from ur3_driver.msg import robot_position
 
 from sensor_msgs.msg import JointState
 from trajectory_msgs.msg import JointTrajectory
@@ -76,12 +77,14 @@ def ctrl_sub_callback(data):
     # Vacuum Gripper
     
     if data.io_0_1 and (not gripper_is_on):
-        gripper_on_srv = rospy.ServiceProxy('/gripper/on', Empty)
-        gripper_on_srv()
+        # gripper_on_srv_0 = rospy.ServiceProxy('/gripper/on', Empty)
+        gripper_on_srv_0 = rospy.ServiceProxy('/gripper/on', Empty)
+        gripper_on_srv_0()
         gripper_is_on = True
     elif (not data.io_0_1) and gripper_is_on:
-        gripper_off_srv = rospy.ServiceProxy('/gripper/off', Empty)
-        gripper_off_srv()
+        # gripper_off_srv_0 = rospy.ServiceProxy('/gripper/off', Empty)
+        gripper_off_srv_0 = rospy.ServiceProxy('/gripper/off', Empty)
+        gripper_off_srv_0()
         gripper_is_on = False
 
     cmd_pub.publish(jt)
@@ -105,13 +108,15 @@ def ctrl_sub_2_callback(data):
     # Vacuum Gripper
     
     if data.io_0_2 and (not gripper_is_on_2):
-        gripper_on_srv = rospy.ServiceProxy('/gripper/on', Empty)
-        gripper_on_srv()
+        gripper_on_srv_1 = rospy.ServiceProxy('/gripper1/on', Empty)
+        gripper_on_srv_1()
         gripper_is_on_2 = True
     elif (not data.io_0_2) and gripper_is_on_2:
-        gripper_off_srv = rospy.ServiceProxy('/gripper/off', Empty)
-        gripper_off_srv()
+        gripper_off_srv_1 = rospy.ServiceProxy('/gripper1/off', Empty)
+        gripper_off_srv_1()
         gripper_is_on_2 = False
+
+
 
     cmd_pub_2.publish(jt)
 
@@ -125,6 +130,7 @@ def gazebo_pos_sub_callback(data):
     pos_msg.position_1 = gazebo_pos
     pos_msg.isReady_1 = True
     pos_pub.publish(pos_msg)
+
 
 # Callback function for the subscriber that subscribe to "joint_states"
 def gazebo_pos_sub_callback_2(data):
@@ -180,7 +186,7 @@ def link_states_sub_callback(data):
 # Callback function for the subscriber that subscribe to "gazebo/link_states"
 def link_states_sub_callback_2(data):
     for i in range(len(data.name)):
-        if data.name[i] == 'robot::vacuum_gripper':
+        if data.name[i] == 'robot2::vacuum_gripper':
             gripper_pose = data.pose[i]
             gripper_position_pub_2.publish(gripper_pose.position)
             return
@@ -199,19 +205,21 @@ if __name__ == '__main__':
     rospy.Subscriber('gripper/grasping', Bool, gripper_sub_callback)
     rospy.Subscriber('gazebo/link_states', LinkStates, link_states_sub_callback)
 
-    rospy.Subscriber('gripper/grasping', Bool, gripper_sub_callback_2)
+    rospy.Subscriber('gripper/grasping1', Bool, gripper_sub_callback_2)
     rospy.Subscriber('gazebo/link_states', LinkStates, link_states_sub_callback_2)
 
-    pos_pub = rospy.Publisher('ur3/position', robot1_position, queue_size=10)
-    pos_pub_2 = rospy.Publisher('ur3/position_1', robot2_position, queue_size=10)
+    
+    
+    pos_pub = rospy.Publisher('ur3_0/position', robot1_position, queue_size=10)
+    pos_pub_2 = rospy.Publisher('ur3_1/position', robot2_position, queue_size=10)
 
     cmd_pub = rospy.Publisher('robot/arm_controller/command', JointTrajectory, queue_size=10)
     cmd_pub_2 = rospy.Publisher('robot2/arm_controller/command', JointTrajectory, queue_size=10)
 
-    gripper_input_pub = rospy.Publisher('ur3/gripper_input', robot1_gripper_input, queue_size=10)
+    gripper_input_pub = rospy.Publisher('ur3_0/gripper_input', robot1_gripper_input, queue_size=10)
     gripper_position_pub = rospy.Publisher('gripper/position', Point, queue_size=10)
 
-    gripper_input_pub_2 = rospy.Publisher('ur3/gripper_input_1', robot2_gripper_input, queue_size=10)
+    gripper_input_pub_2 = rospy.Publisher('ur3_1/gripper_input', robot2_gripper_input, queue_size=10)
     gripper_position_pub_2 = rospy.Publisher('gripper/position', Point, queue_size=10)
 
     try:

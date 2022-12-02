@@ -24,6 +24,10 @@
 #include <ur3_driver/command.h>
 #include <ur3_driver/position.h>
 #include <ur3_driver/gripper_input.h>
+
+
+
+
 #include <vector>
 #include <stdlib.h>
 #include <stdio.h>

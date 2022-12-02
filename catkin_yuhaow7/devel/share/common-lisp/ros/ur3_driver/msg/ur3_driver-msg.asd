@@ -22,4 +22,6 @@
     (:file "_package_robot2_gripper_input" :depends-on ("_package"))
     (:file "robot2_position" :depends-on ("_package_robot2_position"))
     (:file "_package_robot2_position" :depends-on ("_package"))
+    (:file "robot_position" :depends-on ("_package_robot_position"))
+    (:file "_package_robot_position" :depends-on ("_package"))
   ))

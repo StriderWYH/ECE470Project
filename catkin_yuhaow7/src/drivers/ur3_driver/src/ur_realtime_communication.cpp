@@ -46,6 +46,7 @@ UrRealtimeCommunication::UrRealtimeCommunication(
 	safety_count_max_ = safety_count_max;
 
 	pos_pub=nh.advertise<ur3_driver::position>("ur3/position",10);
+
 	ROS_INFO("Finished Creating UrRealtimeCommunication");
 }
 

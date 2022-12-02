@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/command.l"
   "/home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot1_gripper_input.l"
   "/home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_gripper_input.l"
+  "/home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot_position.l"
   "/home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/robot2_command.l"
   "/home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/msg/gripper_input.l"
   "/home/ur3/catkin_yuhaow7/devel/share/roseus/ros/ur3_driver/manifest.l"

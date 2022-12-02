@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/command.h"
   "/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot1_gripper_input.h"
   "/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_gripper_input.h"
+  "/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot_position.h"
   "/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/robot2_command.h"
   "/home/ur3/catkin_yuhaow7/devel/include/ur3_driver/gripper_input.h"
 )
