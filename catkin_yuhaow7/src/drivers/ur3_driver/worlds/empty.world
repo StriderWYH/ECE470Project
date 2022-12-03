@@ -88,6 +88,10 @@
     </body:plane>
   </model:physical>
 
+<model>
+    <name>industrial-warehouse</name>
+    <sdf version="1.4">industrial-warehouse.sdf</sdf>
+  </model>
 <!--
   <model:physical name="walls">
     <include embedded="false">

@@ -39,9 +39,9 @@ if __name__ == '__main__':
     # Get path to block
     ur_path = rospack.get_path('ur_description')
     block_path = os.path.join(ur_path, 'urdf', 'block.urdf')
-    block1_path = os.path.join(ur_path, 'urdf', 'block_green.urdf')
-    block2_path = os.path.join(ur_path, 'urdf', 'block_green.urdf')
-    block3_path = os.path.join(ur_path, 'urdf', 'block_green.urdf')
+    block1_path = os.path.join(ur_path, 'urdf', 'block_red.urdf')
+    block2_path = os.path.join(ur_path, 'urdf', 'block_red.urdf')
+    block3_path = os.path.join(ur_path, 'urdf', 'block_red.urdf')
     block_paths = [block1_path, block2_path, block3_path]
     # Wait for service to start
     rospy.wait_for_service('gazebo/spawn_urdf_model')
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     random.shuffle(x_ranlist)
     random.shuffle(y_ranlist)
         
-    choice_user = raw_input("Spawn randomly or not < 1 for random>: ")
+    choice_user = raw_input("Spawn randomly or not < 1 for random; 2 for selected location>: ")
     if int(choice_user) == 1:
         xy_ran = []
 
@@ -79,6 +79,10 @@ if __name__ == '__main__':
             xy_ran.append((x_ran,y_ran))
             pose = Pose(Point(x_ran, y_ran, 0), Quaternion(0, 0, 0, 0))
             spawn(block_name, open(block_paths[random.randint(0,2)], 'r').read(), 'block', pose, 'world')
+
+    elif int(choice_user) == 2:
+        pose = Pose(Point(2.7, -1.7, 0.05), Quaternion(0, 0, 0, 0))
+        spawn('block1', open(block_paths[random.randint(0,2)], 'r').read(), 'block', pose, 'world')
     else:
     # Starting location ?
         starting_location = None

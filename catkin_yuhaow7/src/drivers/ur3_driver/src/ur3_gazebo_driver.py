@@ -205,7 +205,7 @@ if __name__ == '__main__':
     rospy.Subscriber('gripper/grasping', Bool, gripper_sub_callback)
     rospy.Subscriber('gazebo/link_states', LinkStates, link_states_sub_callback)
 
-    rospy.Subscriber('gripper/grasping1', Bool, gripper_sub_callback_2)
+    rospy.Subscriber('gripper1/grasping1', Bool, gripper_sub_callback_2)
     rospy.Subscriber('gazebo/link_states', LinkStates, link_states_sub_callback_2)
 
     
@@ -220,7 +220,7 @@ if __name__ == '__main__':
     gripper_position_pub = rospy.Publisher('gripper/position', Point, queue_size=10)
 
     gripper_input_pub_2 = rospy.Publisher('ur3_1/gripper_input', robot2_gripper_input, queue_size=10)
-    gripper_position_pub_2 = rospy.Publisher('gripper/position', Point, queue_size=10)
+    gripper_position_pub_2 = rospy.Publisher('gripper1/position', Point, queue_size=10)
 
     try:
         while not rospy.is_shutdown():

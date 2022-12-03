@@ -386,14 +386,14 @@ def move_block(pub_cmd, loop_rate, start_xw_yw_zw, second_angle, middle_angle,ta
     move_arm(pub_cmd, loop_rate, start_xw_yw_zw, 3.0, 3.0)
     time.sleep(2)
     gripper(pub_cmd,loop_rate,suction_on,start_xw_yw_zw)
-    time.sleep(2)
+    time.sleep(4.0)
     # if not digital_in_0_1:
     #     error = 1
     #     gripper(pub_cmd,loop_rate,suction_off,start_xw_yw_zw)
     #     rospy.loginfo("Fail to grip the block")
     #     return error
     #add in lab5
-    time.sleep(2)
+    
     move_arm(pub_cmd, loop_rate, second_angle, 3.0, 3.0)
     time.sleep(2)
 
@@ -452,9 +452,9 @@ class ImageConverter:
         # do coordinate transformation in the blob_search() function, namely, from
         # the image frame to the global world frame.
 
-        xw_yw_G = blob_search(cv_image, "green")
+        xw_yw_G = blob_search(cv_image, "red")
         # xw_yw_Y = blob_search(cv_image, "orange")
-        xw_yw_target_Blue = blob_search(cv_image, "blue")
+        xw_yw_target_Blue = blob_search(cv_image, "green")
 
 
 def moving_triangle(pub_command, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur):
@@ -578,14 +578,27 @@ def main():
     time.sleep(2)
     move_arm_2(pub_command_2, loop_rate, go_down, vel, accel)
 
+    robot2_start_angle = lab_invk(0.2,-0.2,0.030,0)    # grasp the first block
+    print("start success")
+    robot2_second_angle = lab_invk(0.2,-0.2,0.085,0)
+    print("second success")
+    robot2_middle_angle = lab_invk(0.2,0.4,0.085,0)
+    print("middle success")
+    robot2_dest_angle = lab_invk(0.2,0.4,0.072,0)
+    print("dest success")
     
-    
+    # putting the block on the car
+
+    move_block_2(pub_command_2,loop_rate,robot2_start_angle,robot2_second_angle,robot2_middle_angle,robot2_dest_angle,3,1)
+
+    move_arm_2(pub_command_2, loop_rate, go_away, vel, accel)
 
     
     
-
+    
     ic = ImageConverter(SPIN_RATE)
     time.sleep(5)
+    
 
     xw_yw_G_cur = xw_yw_G
     xw_yw_Y_cur = xw_yw_Y
@@ -605,25 +618,19 @@ def main():
     print("lenght of xw_yw_target_Blue is:\n")
     print(len(xw_yw_target_Blue))
     #move_arm(pub_command,loop_rate,go_away,4.0,4.0)
-    start_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
-    mid_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0]
-    dest_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
-    satety_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0]
     i = 0
-    start_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.030,0)
-    mid_angle = lab_invk(xw_yw_target_Blue[0][0],xw_yw_target_Blue[0][0],0.2,0)
    
-    while len(xw_yw_target_Blue) == 0:
+    while len(xw_yw_G) == 0:
         i = i +1
-        print("lenght of xw_yw_target_Blue is:\n")
-        print(len(xw_yw_target_Blue))
-    if len(xw_yw_target_Blue)!=0:
+        print("lenght of xw_yw_G is:\n")
+        print(len(xw_yw_G))
+    if len(xw_yw_G)!=0:
         # check whether in the workspace of the arm
-        while xw_yw_target_Blue[0][0] >= 0.40 or xw_yw_target_Blue[0][0] <=-0.55 or xw_yw_target_Blue[0][1] >=0.80 or xw_yw_target_Blue[0][1]<= -0.4:
+        while xw_yw_G[0][0] >= 0.40 or xw_yw_G[0][0] <=-0.55 or xw_yw_G[0][1] >=0.80 or xw_yw_G[0][1]<= -0.4:
             i = i+1
             print("the car is out of the workspace! Please drive closer!")
         # check whether the car is parking 
-        xw_yw_target_Blue_cur = xw_yw_target_Blue
+        xw_yw_G_cur = xw_yw_G
         time.sleep(5)
         while True:
             # print("lenght of xw_yw_target_Blue is:\n")
@@ -634,17 +641,33 @@ def main():
             # print(len(xw_yw_target_Blue_cur))
             # print(xw_yw_target_Blue_cur)
             # print("\n")
-            a = round(xw_yw_target_Blue[0][0],2)
-            b = round(xw_yw_target_Blue_cur[0][0],2)
+            a = round(xw_yw_G[0][0],2)
+            b = round(xw_yw_G_cur[0][0],2)
             print(a)
             print("\n")
             print(b)
             print("\n")
             if a == b:
                 break
-            xw_yw_target_Blue_cur = xw_yw_target_Blue
+            xw_yw_G_cur = xw_yw_G
             time.sleep(5)
         
+        start_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
+        mid_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0]
+        dest_angle = [0.0,0.0,0.0,0.0,0.0,0.0]
+        satety_angle = [PI,0.0,0.0,-0.5*PI,0.0,0.0]
+        
+
+        start_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.074,0)  # 0.082
+        second_angle = lab_invk(xw_yw_G_cur[0][0],xw_yw_G_cur[0][1],0.2,0)
+        mid_angle = lab_invk(xw_yw_target_Blue[0][0],xw_yw_target_Blue[0][1],0.2,0)
+        dest_angle = lab_invk(xw_yw_target_Blue[0][0],xw_yw_target_Blue[0][1],0.065,0)
+        move_arm(pub_command,loop_rate,second_angle,3,1)
+        time.sleep(1)
+        move_block(pub_command,loop_rate,start_angle,second_angle,mid_angle,dest_angle,3,1)
+
+
+
         # print("lenght of xw_yw_target_Blue is:\n")
         # print(len(xw_yw_target_Blue))
         # print(xw_yw_target_Blue)
@@ -657,7 +680,9 @@ def main():
         #     rospy.loginfo("error, arm is halt")
         #     rospy.spin()
         #     return 1
-        moving_two_arms(pub_command,pub_command_2, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur)
+
+        # moving_two_arms(pub_command,pub_command_2, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur)
+
         # move_arm(pub_command, loop_rate, mid_angle, vel, accel)
         # moving_triangle(pub_command, loop_rate, xw_yw_G_cur, xw_yw_target_Blue_cur)
         # dest_angle = lab_invk(xw_yw_target_Blue_cur[0][0],xw_yw_target_Blue_cur[0][1],0.076,0)

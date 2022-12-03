@@ -11,9 +11,9 @@ import numpy as np
 # tx = 0.244
 # ty = 0.18
 theta = 0
-beta = 440
-tx = 0.27272727
-ty = 0.09772727
+beta = 440     # 440
+tx = 0.29272727   # 0.27272727
+ty = 0.09772727   # 0.09772727
 
 # Function that converts image coord to world coord
 def IMG2W(col, row):
@@ -61,7 +61,11 @@ def blob_search(image_raw, color):
         params.filterByArea = False
         params.minArea = 100
         params.maxArea = 1000
-   
+
+    if color == "green":
+        params.filterByArea = False
+        params.minArea = 100
+        params.maxArea = 1000
 
     # Filter by Circularity
     params.filterByCircularity = True
@@ -100,7 +104,11 @@ def blob_search(image_raw, color):
     if(color == "blue"):
         lower = (110,80,80)     # orange lower
         upper = (130,255,255)   # orange upper
-        
+
+    if(color == "red"):
+        lower = (0,120,120)     # orange lower
+        upper = (20,255,255)   # orange upper
+
   
        
     # Define a mask using the lower and upper bounds of the target color
